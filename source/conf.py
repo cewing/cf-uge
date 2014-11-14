@@ -105,7 +105,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'cf_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -113,7 +113,7 @@ html_theme = 'default'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = ['_themes',]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -124,7 +124,7 @@ html_theme = 'default'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = "_static/cf_logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -272,16 +272,31 @@ extensions += [
 ]
 
 slide_title = 'Unix and Git for Everyone'
-slide_theme = 'slides'
+slide_theme = 'slides2'
 slide_levels = 3
 
 # Place custom static assets in the _static directory and uncomment
 # the following lines to include them
 
-# slide_theme_options = {
-#     'custom_css': 'custom.css',
-#     'custom_js': 'custom.js',
-# }
+slide_theme_options = {
+    'subtitle': 'Code Fellows - Seattle',
+    'custom_css': 'custom.css',
+    # 'custom_js': 'custom.js',
+    'presenters': [
+        {
+            'name': 'Ryan Sobol',
+            'twitter': '@ryansobol',
+            'github': 'https://github.com/ryansobol',
+            'company': 'Code Fellows'
+        },
+        {
+            'name': 'Cris Ewing',
+            'twitter': '@crisewing',
+            'github': 'http://github.com/cewing',
+            'company': 'Cris Ewing, Developer LLC'
+        },
+    ]
+}
 
 # ----------------------------------------------
 
