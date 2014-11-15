@@ -899,11 +899,3 @@ terminal.
     :level: 1
 
     `Creating, Destroying, and Preserving <./making.html>`_
-
-
-
-
-
-
-
-

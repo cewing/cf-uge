@@ -574,7 +574,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: left
     .. container::
-    
+
         This ``.git`` directory is an example of a *hidden file*
 
         In Unix, any file whose name begins with ``.`` is, by default, not shown to
@@ -597,13 +597,13 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         .. container::
-        
+
             Start by viewing the ``status`` of your repository:
 
             .. code-block:: bash
-            
+
                 $ git status
                 On branch master
                 Changes not staged for commit:
@@ -629,9 +629,9 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         .. code-block:: bash
-        
+
             $ git add unix_notes.txt
             $ git status
             On branch master
@@ -643,11 +643,11 @@ preserve a record of the actions we take.
         Notice that this time, the file is marked as *modified* instead of *new*
 
         .. container::
-        
+
             You can now commit it:
 
             .. code-block:: bash
-            
+
                 $ git commit -m "added note about hidden files"
                 [master 4eca5ad] added note about hidden files
                  1 file changed, 1 insertion(+)
@@ -659,7 +659,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         You create a repository **once**
 
         Then you ``add`` a file or files to it and you ``commit`` those changes
@@ -671,11 +671,11 @@ preserve a record of the actions we take.
 
 .. slide:: Building History
     :level: 3
-        
+
     Check your ``log`` to see the history of your changes unfold:
 
     .. code-block:: bash
-    
+
         $ git log
         commit 4eca5ad05bb6e3bc92595a9703a3c5c8da410820
         Author: cewing <cris@crisewing.com>
@@ -799,22 +799,22 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         Use the ``branch`` command to create a new *branch* for your repo called
         *git-notes*:
 
         .. code-block:: bash
-        
+
             $ git branch git-notes
 
         You can see the new branch by using the ``branch`` command without a name:
 
         .. code-block:: bash
-        
+
             $ git branch
               git-notes
             * master
-        
+
         Notice that git tells you which branch you are on with an asterisk (``*`` )
 
 .. slide:: Switching Branches
@@ -838,19 +838,19 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         As you do so, visualize the changes that are happening
 
         .. code-block:: bash
-        
+
             $ git checkout git-notes
 
         .. container::
-        
+
             Use ``git branch`` to see which branch is *active*:
 
             .. code-block:: bash
-            
+
                 $ git branch
                 * git-notes
                   master
@@ -862,24 +862,559 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         First, add a new file to your repository called ``git_notes.txt``
 
         .. container::
-        
+
             To do so, use the unix ``touch`` command:
 
             .. code-block:: bash
-            
+
                 $ touch git_notes.txt
 
         .. container::
-        
+
             Then, open the new file in your editor:
 
             .. code-block:: bash
-            
+
                 $ subl git_notes.txt
 
         Take the next ten minutes to write down your notes on what you've
         learned about git so far
+
+.. slide:: Saving Your Changes
+    :level: 3
+
+    Once you've finished your notes, don't forget to use your simple git
+    workflow to save them
+
+    .. rst-class:: build
+    .. container::
+
+        Do you remember the workflow?
+
+        ``git status``
+
+        ``git add``
+
+        ``git commit -m "starting notes on git"``
+
+        Again, try to *visualize* what's happening here
+
+.. slide:: Visualizing the Results
+    :level: 3
+
+    .. figure:: /_static/git_commit_on_branch.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        While it is checked out, new commits move the label for the new branch.
+
+        Notice that HEAD is *always* the same as "where you are now"
+
+.. slide:: Isolating Your Changes
+
+    You can use this to switch between branches and make changes in isolation.
+
+    .. rst-class:: build
+    .. container::
+
+        .. figure:: /_static/git_checkout_master.png
+            :width: 65%
+            :class: centered
+
+        .. figure:: /_static/git_new_commit_on_master.png
+            :width: 65%
+            :class: centered
+
+.. slide:: Working with Remotes
+    :level: 3
+
+    Since ``git`` is a *distributed* versioning system, there is no **central**
+    repository that serves as the one to rule them all.
+
+    .. rst-class:: build
+    .. container::
+
+        Instead, you work with *local* repositories, and *remotes* that they are
+        connected to.
+
+        In the workshop today, you've created a brand new repository
+
+        It is not connected to *any* remote
+
+        .. container::
+
+            You can verify this with the ``remote`` git command and the ``v``
+            flag:
+
+            .. code-block:: bash
+
+                $ git remote -v
+
+.. slide:: Enter GitHub
+    :level: 3
+
+    Remotes serve as a way of sharing work with other developers
+
+    .. rst-class:: build
+    .. container::
+
+        GitHub has emerged as a premier location for such sharing
+
+        It provides you with a common location that anyone can access
+
+        In addition, it provides a number of useful tools for managing work
+        that is being shared among a dispersed group of people
+
+        But to use it, you must first attach a new, empty repository in GitHub
+        to your local repository as a *remote*
+
+        Begin by opening your browser and going to your personal account on GitHub
+
+.. slide:: Creating a Repository in GitHub
+    :level: 3
+
+    .. figure:: /_static/github_create_repo_menu.png
+        :width: 60%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        At the top right side of the window, look for your name and avatar
+
+        Next to it you'll find a small ``+`` sign, click that
+
+        From the menu that opens, select **New repository**
+
+.. slide:: Set Up Your Repository
+    :level: 3
+
+    .. figure:: /_static/github_setup_repository.png
+        :width: 75%
+        :class: centered
+
+    Set up your repository as shown here, then click **Create Repository**
+
+.. slide:: Preparing to Connect
+    :level: 3
+
+    .. figure:: /_static/github_personal_settings.png
+        :width: 50%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        Before you connect your remote, you'll want to be sure that you will be
+        able to push easily
+
+        Start by clicking on the small gear icon at the top right near your
+        name and avatar
+
+        This will open your account settings page
+
+        On the settings page, click on the **SSH Keys** item in the menu on the
+        left
+
+.. slide:: Configuring SSH
+    :level: 3
+
+    .. figure:: /_static/github_ssh_page.png
+        :width: 70%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        If you do not see any keys listed in the page that opens, follow the
+        instructions linked at the top as **generating SSH keys**
+
+        If you do have keys, verify that they work:
+
+        .. code-block:: bash
+
+            $ ssh git@github.com
+            PTY allocation request failed on channel 0
+            Hi cewing! You've successfully authenticated, but GitHub does not provide shell access.
+            Connection to github.com closed.
+
+.. slide:: Add Your Remote
+    :level: 3
+
+    In your browser, return to your newly created repository
+
+    .. rst-class:: build
+    .. container::
+
+        In your terminal, use your unix knowledge to ensure you are in your local
+        ``gue_workshop`` directory
+
+        .. container::
+
+            Then, add a remote to your local repository using the ``remote`` git command
+
+            .. code-block:: bash
+
+                $ git remote add origin git@github.com:cewing/gue-workshop.git
+
+        .. container::
+
+            Verify that this worked using the ``remote`` command with the ``v`` flag:
+
+            .. code-block:: bash
+
+                $ git remote -v
+                origin  git@github.com:cewing/gue-workshop.git (fetch)
+                origin  git@github.com:cewing/gue-workshop.git (push)
+
+.. slide:: Push to Your Remote
+    :level: 3
+
+    Before pushing, verify that your local repository has the ``master`` branch
+    checked out
+
+    .. rst-class:: build
+    .. container::
+    
+        Remember how to switch branches?
+
+        ``git checkout master``
+
+        Then, push your master branch to github:
+
+        .. code-block:: bash
+        
+            $ git push -u origin master
+            Counting objects: 6, done.
+            ...
+            To git@github.com:cewing/gue-workshop.git
+             * [new branch]      master -> master
+            Branch master set up to track remote branch master from origin.
+
+.. slide:: Solidify Your Learning
+    :level: 3
+
+    Switch back to your git-notes branch
+
+    .. rst-class:: build
+    .. container::
+    
+        Once there, spend five to ten minutes jotting down your notes on git
+        remotes
+
+        This is an excellent time to ask any questions you might have
+
+        After you're done, save your changes in git
+
+        Finally, push your git-notes branch up to github too
+
+        .. code-block:: bash
+        
+            $ git push -u origin git-notes
+            ...
+            To git@github.com:cewing/gue-workshop.git
+             * [new branch]      git-notes -> git-notes
+            Branch git-notes set up to track remote branch git-notes from origin.
+
+.. slide:: More Git Workflow
+    :level: 3
+
+    What we've just done is very common workflow
+
+    .. rst-class:: build
+    .. container::
+    
+        Imagine your repository is not notes from a class, but code for a vital
+        website
+
+        Further imagine that your production server is running using code on
+        the master branch
+
+        You wouldn't want anyone making willy-nilly changes to master
+
+        It would be much better to have only tested, vetted code end up in
+        master
+
+        So, you ask your development team to implement fixes and features on
+        branches
+
+        What comes next?
+
+.. slide:: The Mighty Pull Request
+    :level: 3
+
+    The next step is for your developers to make **Pull Requests** when they
+    have completed their work
+
+    .. rst-class:: build
+    .. container::
+
+        A **pull request** lets the manager of the project know that work is
+        ready to be reviewed
+
+        The UI in GitHub provides ways to comment on code
+
+        Developers can make changes in response to comments and get them
+        reviewed as well
+
+        All this is done, again, in the web browser
+
+        Go back to GitHub, to your new ``gue-workshop`` repository
+
+.. slide:: Creating a PR
+    :level: 3
+
+    On the homepage of your repository, find the **Pull Requests** button in
+    the menu on the right
+
+    .. rst-class:: build
+    .. container::
+    
+        Click it
+
+        It will open a page listing open pull requests
+
+        There should be none
+
+        .. container::
+        
+            click the big, green button that says **New pull request**
+
+            .. figure:: /_static/github_new_pr_button.png
+                :width: 20%
+                :class: centered
+
+.. slide:: PR Setup
+    :level: 3
+
+    .. figure:: /_static/github_edit_pr.png
+        :width: 80%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+    
+        When you first arrive, you'll be offered a chance to set the to and
+        from points for your new **PR**
+
+        Set them as shown in the image here
+
+        The ``base`` should be your master branch and the ``compare`` will be
+        the git-notes branch
+
+.. slide:: Finishing Up
+    :level: 3
+
+    When you're set, click **Create pull request**
+
+    .. rst-class:: build
+    .. container::
+    
+        On the next screen, enter a note about why the PR should be merged
+
+        Then click **Create pull request** again
+
+        And now, your developer is done
+
+        It's time for the manager to review
+
+.. slide:: Reviewing a PR
+    :level: 3
+
+    .. figure:: /_static/github_pr_review_tabs.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+    
+        In reviewing a pull request, the owner of a project is given quite a
+        few tools
+
+        This tab bar shows that you can view individual files, all changed
+        files, or only the review commments made so far
+
+        If you click on the code tabs, you can see the differences between the
+        files in the ``from`` side and those in the ``to`` side
+
+        And if you hover over a line, an icon offers a chance to add comments
+        directly alongside the code
+
+        So long as the request is open, changes made to the branch will be
+        included
+
+.. slide:: Merging the PR
+    :level: 3
+
+    .. figure:: /_static/github_merge_pr.png
+        :width: 70%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+    
+        When work is completed to everyone's satisfaction, the **PR** can be
+        merged
+
+        The manager can click on the **Conversation** tab and look for this
+        green button
+
+        It indicates that the pull request can be merged without conflict
+
+        If not present, work will be required to resolve conflicts before a
+        merge can be completed.
+
+.. slide:: Merge Your PR
+    :level: 3
+
+    Assuming you've been following along, you should be ready to merge your own
+    pull request
+
+    Go ahead and do so when you're ready
+
+    When it's done, you've learned the basics of professional git workflow
+
+.. slide:: Pulling Changes
+    :level: 3
+
+    Now that you've merged git-notes to master on GitHub, your local mster
+    branch is out-of-date
+
+    .. rst-class:: build
+    .. container::
+    
+        To catch up, we have to pull the changes back
+
+        Return to your terminal, and checkout the master branch of your
+        repository
+
+        Make sure to use ``git branch`` to verify that you have master checked
+        out
+
+        .. container::
+        
+            When ready, type the following:
+
+            .. code-block:: bash
+
+                $ git pull origin master
+
+.. slide:: What happened
+    :level: 3
+
+    When you executed that command a few things took place:
+
+    .. rst-class:: build
+
+    * Git ``fetched`` all of the changes on master to a local branch called
+      origin/master
+    * Git ``merged`` the changes from origin/master to your local master branch
+    
+    .. rst-class:: build
+    .. container::
+    
+        You can accomplish the same thing on your own as two commands
+
+        But doing just one is so much easier
+
+.. slide:: Review
+    :level: 1
+
+    Take a moment to reflect
+
+.. slide:: COMMANDS
+
+    We've added the following unix commands to our repertoire:
+
+    =========== ==============================================================
+    command     purpose
+    =========== ==============================================================
+    ``history`` Interact with your command line history
+    ----------- --------------------------------------------------------------
+    ``less``    Read large text inputs in a controlled fashion
+    ----------- --------------------------------------------------------------
+    ``mv``      Move files from one place to another, or rename them, or both
+    ----------- --------------------------------------------------------------
+    ``touch``   Create a new file, or update the modified date for an existing
+    =========== ==============================================================
+
+.. slide:: More Commands
+
+    There are a few others you might want to know:
+
+    =========== ==============================================================
+    command     purpose
+    =========== ==============================================================
+    ``cp``      Copy the contents of a file or directory to a new location
+    ----------- --------------------------------------------------------------
+    ``rm``      Remove a file from the filesystem entirely
+    ----------- --------------------------------------------------------------
+    ``rmdir``   Remove a directory from the filesystem if it is empty
+    =========== ==============================================================
+
+.. slide:: Git Commands
+    :level: 3
+
+    We've also learned quite a few git commands
+
+    ``git init``
+      Creates a new repository in the *present working directory*
+
+    ``git status``
+      Shows the state of the repository and all files in the same directory,
+      including ones not yet added
+
+    ``git add <file>``
+      Adds a new file to the repository, or adds a modified file to the stage
+      so they can be committed
+
+    ``git commit``
+      Commits all staged changes to files in the repository for safe keeping
+
+    ``git push``
+      Pushes all changes from your local repository to the named remote
+
+.. slide:: More Git Commands
+    :level: 3
+
+    ``git branch``
+      Create and manage new and existing branches in your repository
+
+    ``git checkout``
+      Change the active branch and/or the location of HEAD``
+
+    ``git pull``
+      Fetch and merge all changes from a remote repository branch to a local
+      branch
+
+    ``git log``
+      Shows a list of the commits in the repository along with information
+      about the time, owner and message associated with the change
+
+    ``git config``
+      Set configuration for how git operates, either globally or per repository
+
+.. slide:: Wrapping Up
+    :level: 3
+
+    There's much much more that could be said
+
+    .. rst-class:: build
+    .. container::
+    
+        But that's all I've written up here
+
+        If there's some spare time, we'd be happy to continue going over more
+        advanced Unix commands or git operations
+
+        However, what you've learned today is plenty and enough to serve you
+        well for quite some time
+
+        Master these fundamentals and you'll be well on your way to guru-hood
