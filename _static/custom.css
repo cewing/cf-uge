@@ -164,3 +164,9 @@ aside.gdbar {
     right: 0;
     top: 5px; }
 
+.figure a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border: none; }
+

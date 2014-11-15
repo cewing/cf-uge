@@ -656,6 +656,965 @@ directory</p>
 
 
     </article>
+  </slide>  <slide class="admonition-concept-hidden-files level-2">
+    <hgroup>
+      <h2>CONCEPT: Hidden Files</h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>This <tt class="docutils literal"><span class="pre">.git</span></tt> directory is an example of a <em>hidden file</em></p>
+<p>In Unix, any file whose name begins with <tt class="docutils literal"><span class="pre">.</span></tt> is, by default, not shown to
+the user unless specifically asked for</p>
+<p>This helps to keep the clutter associated with maintenance and
+configuration out of sight</p>
+<p>The <tt class="docutils literal"><span class="pre">.</span></tt> and <tt class="docutils literal"><span class="pre">..</span></tt> items in every directory on the filesystem are also
+examples of this type of file</p>
+<p>You know what they do, right?</p>
+<p>Add a note to your <tt class="docutils literal"><span class="pre">unix_notes.txt</span></tt> about <em>hidden files</em></p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-tracking-changes level-3">
+    <hgroup>
+      <h3>Tracking Changes</h3>
+    </hgroup>
+    <article class="">
+      <p>Now that your notes file has changed, you'll want to preserve that change</p>
+<div class="build container">
+<div class="container">
+<p>Start by viewing the <tt class="docutils literal"><span class="pre">status</span></tt> of your repository:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+On branch master
+Changes not staged <span class="k">for</span> commit:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
+
+    modified:   unix_notes.txt
+
+no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<p>Notice that you have <em>two</em> choices, to <tt class="docutils literal"><span class="pre">add</span></tt> the file or to <em>discard</em> the
+changes</p>
+<p>Also notice that git offers you a choice to use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></tt></p>
+<p><strong>Do Not Do That</strong></p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-stage-your-changes level-3">
+    <hgroup>
+      <h3>Stage Your Changes</h3>
+    </hgroup>
+    <article class="">
+      <p>You have a file that has been changed, you must <tt class="docutils literal"><span class="pre">add</span></tt> the file to the
+stage so it can be committed</p>
+<div class="build container">
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git add unix_notes.txt
+<span class="nv">$ </span>git status
+On branch master
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+    modified:   unix_notes.txt
+</pre></div>
+</div>
+<p>Notice that this time, the file is marked as <em>modified</em> instead of <em>new</em></p>
+<div class="container">
+<p>You can now commit it:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git commit -m <span class="s2">&quot;added note about hidden files&quot;</span>
+<span class="o">[</span>master 4eca5ad<span class="o">]</span> added note about hidden files
+ <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-simple-workflow level-3">
+    <hgroup>
+      <h3>Simple Workflow</h3>
+    </hgroup>
+    <article class="">
+      <p>And that's the basics of git workflow</p>
+<div class="build container">
+<p>You create a repository <strong>once</strong></p>
+<p>Then you <tt class="docutils literal"><span class="pre">add</span></tt> a file or files to it and you <tt class="docutils literal"><span class="pre">commit</span></tt> those changes</p>
+<p>Then you modify the files, <tt class="docutils literal"><span class="pre">add</span></tt> them to the stage and <tt class="docutils literal"><span class="pre">commit</span></tt> the
+changes</p>
+<p>Lather, rinse and repeat</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-building-history level-3">
+    <hgroup>
+      <h3>Building History</h3>
+    </hgroup>
+    <article class="">
+      <p>Check your <tt class="docutils literal"><span class="pre">log</span></tt> to see the history of your changes unfold:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git log
+commit 4eca5ad05bb6e3bc92595a9703a3c5c8da410820
+Author: cewing &lt;cris@crisewing.com&gt;
+Date:   Sat Nov <span class="m">15</span> 04:11:17 <span class="m">2014</span> -0800
+
+    added note about hidden files
+
+commit 0bc447c0cfd0b7856cd19c705e8eefa0c64283de
+Author: cewing &lt;cris@crisewing.com&gt;
+Date:   Sat Nov <span class="m">15</span> 03:33:09 <span class="m">2014</span> -0800
+
+    adding unix notes, first draft
+</pre></div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-stepping-back level-1">
+    <hgroup>
+      <h1>Stepping Back</h1>
+    </hgroup>
+    <article class="">
+      <p>In which we learn a bit about what's going on here</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-what-is-git level-3">
+    <hgroup>
+      <h3>What is git?</h3>
+    </hgroup>
+    <article class="">
+      <div class="build container">
+<p>A &quot;version control system&quot;</p>
+<p>A history of everything you do to your files</p>
+<p>A graph of &quot;states&quot; in which your files has existed</p>
+<p>That last one is a bit tricky, so let's talk it over for a minute</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-a-picture-of-git level-3">
+    <hgroup>
+      <h3>A Picture of git</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_simple_timeline.png"><img alt="_images/git_simple_timeline.png" class="centered" src="_images/git_simple_timeline.png" style="width: 70%;" /></a>
+</div>
+<div class="build container">
+<p>A git repository is a set of points in time, with history showing where
+you've been.</p>
+<p>Each point has a <em>name</em> (here <em>A</em>, <em>B</em>, <em>C</em>) that uniquely identifies it,
+called a <em>hash</em></p>
+<p>The path from one point to the previous is represented by the <em>difference</em>
+between the two points.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-a-picture-of-git level-3">
+    <hgroup>
+      <h3>A Picture of git</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_head.png"><img alt="_images/git_head.png" class="centered" src="_images/git_head.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>Each point in time can also have a label that points to it.</p>
+<p>One of these is <em>HEAD</em>, which always points to the place in the timeline
+that you are currently looking at.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-a-picture-of-git level-3">
+    <hgroup>
+      <h3>A Picture of git</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_master_branch.png"><img alt="_images/git_master_branch.png" class="centered" src="_images/git_master_branch.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>You may also be familiar with the label &quot;master&quot;.</p>
+<p>This is the name that git automatically gives to the first <em>branch</em> in a
+repository.</p>
+<p>A <em>branch</em> is actually just a label that points to a specific point in
+time.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-a-picture-of-git level-3">
+    <hgroup>
+      <h3>A Picture of git</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_new_commit.png"><img alt="_images/git_new_commit.png" class="centered" src="_images/git_new_commit.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>When you make a <em>commit</em> in git, you add a new point to the timeline.</p>
+<p>The HEAD label moves to this new point.</p>
+<p>So does the label for the <em>branch</em> you are on.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-making-a-branch level-3">
+    <hgroup>
+      <h3>Making a Branch</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_new_branch.png"><img alt="_images/git_new_branch.png" class="centered" src="_images/git_new_branch.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>You can make a new <em>branch</em> with the <tt class="docutils literal"><span class="pre">branch</span></tt> command.</p>
+<p>This adds a new label to the current commit.</p>
+<p>Notice that it <em>does not</em> check out that branch.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-try-it-out level-3">
+    <hgroup>
+      <h3>Try It Out</h3>
+    </hgroup>
+    <article class="">
+      <p>Go ahead and try this out yourself</p>
+<div class="build container">
+<p>Use the <tt class="docutils literal"><span class="pre">branch</span></tt> command to create a new <em>branch</em> for your repo called
+<em>git-notes</em>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git branch git-notes
+</pre></div>
+</div>
+<p>You can see the new branch by using the <tt class="docutils literal"><span class="pre">branch</span></tt> command without a name:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git branch
+  git-notes
+* master
+</pre></div>
+</div>
+<p>Notice that git tells you which branch you are on with an asterisk (<tt class="docutils literal"><span class="pre">*</span></tt> )</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-switching-branches level-3">
+    <hgroup>
+      <h3>Switching Branches</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_checkout_branch.png"><img alt="_images/git_checkout_branch.png" class="centered" src="_images/git_checkout_branch.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>You can use the <tt class="docutils literal"><span class="pre">checkout</span></tt> command to switch to the new branch.</p>
+<p>This associates the HEAD label with the <em>session01</em> label.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-try-it-out level-3">
+    <hgroup>
+      <h3>Try It Out</h3>
+    </hgroup>
+    <article class="">
+      <p>Go ahead and try checking out your own new branch with <tt class="docutils literal"><span class="pre">checkout</span></tt></p>
+<div class="build container">
+<p>As you do so, visualize the changes that are happening</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git checkout git-notes
+</pre></div>
+</div>
+<div class="container">
+<p>Use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt> to see which branch is <em>active</em>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git branch
+* git-notes
+  master
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-making-a-change level-3">
+    <hgroup>
+      <h3>Making a change</h3>
+    </hgroup>
+    <article class="">
+      <p>Now that you have the <tt class="docutils literal"><span class="pre">git-notes</span></tt> branch checked out, make some changes</p>
+<div class="build container">
+<p>First, add a new file to your repository called <tt class="docutils literal"><span class="pre">git_notes.txt</span></tt></p>
+<div class="container">
+<p>To do so, use the unix <tt class="docutils literal"><span class="pre">touch</span></tt> command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>touch git_notes.txt
+</pre></div>
+</div>
+</div>
+<div class="container">
+<p>Then, open the new file in your editor:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>subl git_notes.txt
+</pre></div>
+</div>
+</div>
+<p>Take the next ten minutes to write down your notes on what you've
+learned about git so far</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-saving-your-changes level-3">
+    <hgroup>
+      <h3>Saving Your Changes</h3>
+    </hgroup>
+    <article class="">
+      <p>Once you've finished your notes, don't forget to use your simple git
+workflow to save them</p>
+<div class="build container">
+<p>Do you remember the workflow?</p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;starting</span> <span class="pre">notes</span> <span class="pre">on</span> <span class="pre">git&quot;</span></tt></p>
+<p>Again, try to <em>visualize</em> what's happening here</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-visualizing-the-results level-3">
+    <hgroup>
+      <h3>Visualizing the Results</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_commit_on_branch.png"><img alt="_images/git_commit_on_branch.png" class="centered" src="_images/git_commit_on_branch.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>While it is checked out, new commits move the label for the new branch.</p>
+<p>Notice that HEAD is <em>always</em> the same as &quot;where you are now&quot;</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-isolating-your-changes level-1">
+    <hgroup>
+      <h1>Isolating Your Changes</h1>
+    </hgroup>
+    <article class="">
+      <p>You can use this to switch between branches and make changes in isolation.</p>
+<div class="build container">
+<div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_checkout_master.png"><img alt="_images/git_checkout_master.png" class="centered" src="_images/git_checkout_master.png" style="width: 65%;" /></a>
+</div>
+<div class="figure">
+<a class="centered reference internal image-reference" href="_images/git_new_commit_on_master.png"><img alt="_images/git_new_commit_on_master.png" class="centered" src="_images/git_new_commit_on_master.png" style="width: 65%;" /></a>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-working-with-remotes level-3">
+    <hgroup>
+      <h3>Working with Remotes</h3>
+    </hgroup>
+    <article class="">
+      <p>Since <tt class="docutils literal"><span class="pre">git</span></tt> is a <em>distributed</em> versioning system, there is no <strong>central</strong>
+repository that serves as the one to rule them all.</p>
+<div class="build container">
+<p>Instead, you work with <em>local</em> repositories, and <em>remotes</em> that they are
+connected to.</p>
+<p>In the workshop today, you've created a brand new repository</p>
+<p>It is not connected to <em>any</em> remote</p>
+<div class="container">
+<p>You can verify this with the <tt class="docutils literal"><span class="pre">remote</span></tt> git command and the <tt class="docutils literal"><span class="pre">v</span></tt>
+flag:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote -v
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-enter-github level-3">
+    <hgroup>
+      <h3>Enter GitHub</h3>
+    </hgroup>
+    <article class="">
+      <p>Remotes serve as a way of sharing work with other developers</p>
+<div class="build container">
+<p>GitHub has emerged as a premier location for such sharing</p>
+<p>It provides you with a common location that anyone can access</p>
+<p>In addition, it provides a number of useful tools for managing work
+that is being shared among a dispersed group of people</p>
+<p>But to use it, you must first attach a new, empty repository in GitHub
+to your local repository as a <em>remote</em></p>
+<p>Begin by opening your browser and going to your personal account on GitHub</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-creating-a-repository-in-github level-3">
+    <hgroup>
+      <h3>Creating a Repository in GitHub</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_create_repo_menu.png"><img alt="_images/github_create_repo_menu.png" class="centered" src="_images/github_create_repo_menu.png" style="width: 60%;" /></a>
+</div>
+<div class="build container">
+<p>At the top right side of the window, look for your name and avatar</p>
+<p>Next to it you'll find a small <tt class="docutils literal"><span class="pre">+</span></tt> sign, click that</p>
+<p>From the menu that opens, select <strong>New repository</strong></p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-set-up-your-repository level-3">
+    <hgroup>
+      <h3>Set Up Your Repository</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_setup_repository.png"><img alt="_images/github_setup_repository.png" class="centered" src="_images/github_setup_repository.png" style="width: 75%;" /></a>
+</div>
+<p>Set up your repository as shown here, then click <strong>Create Repository</strong></p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-preparing-to-connect level-3">
+    <hgroup>
+      <h3>Preparing to Connect</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_personal_settings.png"><img alt="_images/github_personal_settings.png" class="centered" src="_images/github_personal_settings.png" style="width: 50%;" /></a>
+</div>
+<div class="build container">
+<p>Before you connect your remote, you'll want to be sure that you will be
+able to push easily</p>
+<p>Start by clicking on the small gear icon at the top right near your
+name and avatar</p>
+<p>This will open your account settings page</p>
+<p>On the settings page, click on the <strong>SSH Keys</strong> item in the menu on the
+left</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-configuring-ssh level-3">
+    <hgroup>
+      <h3>Configuring SSH</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_ssh_page.png"><img alt="_images/github_ssh_page.png" class="centered" src="_images/github_ssh_page.png" style="width: 70%;" /></a>
+</div>
+<div class="build container">
+<p>If you do not see any keys listed in the page that opens, follow the
+instructions linked at the top as <strong>generating SSH keys</strong></p>
+<p>If you do have keys, verify that they work:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ ssh git@github.com
+PTY allocation request failed on channel 0
+Hi cewing! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-add-your-remote level-3">
+    <hgroup>
+      <h3>Add Your Remote</h3>
+    </hgroup>
+    <article class="">
+      <p>In your browser, return to your newly created repository</p>
+<div class="build container">
+<p>In your terminal, use your unix knowledge to ensure you are in your local
+<tt class="docutils literal"><span class="pre">gue_workshop</span></tt> directory</p>
+<div class="container">
+<p>Then, add a remote to your local repository using the <tt class="docutils literal"><span class="pre">remote</span></tt> git command</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote add origin git@github.com:cewing/gue-workshop.git
+</pre></div>
+</div>
+</div>
+<div class="container">
+<p>Verify that this worked using the <tt class="docutils literal"><span class="pre">remote</span></tt> command with the <tt class="docutils literal"><span class="pre">v</span></tt> flag:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote -v
+origin  git@github.com:cewing/gue-workshop.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:cewing/gue-workshop.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-push-to-your-remote level-3">
+    <hgroup>
+      <h3>Push to Your Remote</h3>
+    </hgroup>
+    <article class="">
+      <p>Before pushing, verify that your local repository has the <tt class="docutils literal"><span class="pre">master</span></tt> branch
+checked out</p>
+<div class="build container">
+<p>Remember how to switch branches?</p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></tt></p>
+<p>Then, push your master branch to github:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push -u origin master
+Counting objects: 6, <span class="k">done</span>.
+...
+To git@github.com:cewing/gue-workshop.git
+ * <span class="o">[</span>new branch<span class="o">]</span>      master -&gt; master
+Branch master <span class="nb">set </span>up to track remote branch master from origin.
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-solidify-your-learning level-3">
+    <hgroup>
+      <h3>Solidify Your Learning</h3>
+    </hgroup>
+    <article class="">
+      <p>Switch back to your git-notes branch</p>
+<div class="build container">
+<p>Once there, spend five to ten minutes jotting down your notes on git
+remotes</p>
+<p>This is an excellent time to ask any questions you might have</p>
+<p>After you're done, save your changes in git</p>
+<p>Finally, push your git-notes branch up to github too</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push -u origin git-notes
+...
+To git@github.com:cewing/gue-workshop.git
+ * <span class="o">[</span>new branch<span class="o">]</span>      git-notes -&gt; git-notes
+Branch git-notes <span class="nb">set </span>up to track remote branch git-notes from origin.
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-more-git-workflow level-3">
+    <hgroup>
+      <h3>More Git Workflow</h3>
+    </hgroup>
+    <article class="">
+      <p>What we've just done is very common workflow</p>
+<div class="build container">
+<p>Imagine your repository is not notes from a class, but code for a vital
+website</p>
+<p>Further imagine that your production server is running using code on
+the master branch</p>
+<p>You wouldn't want anyone making willy-nilly changes to master</p>
+<p>It would be much better to have only tested, vetted code end up in
+master</p>
+<p>So, you ask your development team to implement fixes and features on
+branches</p>
+<p>What comes next?</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-the-mighty-pull-request level-3">
+    <hgroup>
+      <h3>The Mighty Pull Request</h3>
+    </hgroup>
+    <article class="">
+      <p>The next step is for your developers to make <strong>Pull Requests</strong> when they
+have completed their work</p>
+<div class="build container">
+<p>A <strong>pull request</strong> lets the manager of the project know that work is
+ready to be reviewed</p>
+<p>The UI in GitHub provides ways to comment on code</p>
+<p>Developers can make changes in response to comments and get them
+reviewed as well</p>
+<p>All this is done, again, in the web browser</p>
+<p>Go back to GitHub, to your new <tt class="docutils literal"><span class="pre">gue-workshop</span></tt> repository</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-creating-a-pr level-3">
+    <hgroup>
+      <h3>Creating a PR</h3>
+    </hgroup>
+    <article class="">
+      <p>On the homepage of your repository, find the <strong>Pull Requests</strong> button in
+the menu on the right</p>
+<div class="build container">
+<p>Click it</p>
+<p>It will open a page listing open pull requests</p>
+<p>There should be none</p>
+<div class="container">
+<p>click the big, green button that says <strong>New pull request</strong></p>
+<div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_new_pr_button.png"><img alt="_images/github_new_pr_button.png" class="centered" src="_images/github_new_pr_button.png" style="width: 20%;" /></a>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-pr-setup level-3">
+    <hgroup>
+      <h3>PR Setup</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_edit_pr.png"><img alt="_images/github_edit_pr.png" class="centered" src="_images/github_edit_pr.png" style="width: 80%;" /></a>
+</div>
+<div class="build container">
+<p>When you first arrive, you'll be offered a chance to set the to and
+from points for your new <strong>PR</strong></p>
+<p>Set them as shown in the image here</p>
+<p>The <tt class="docutils literal"><span class="pre">base</span></tt> should be your master branch and the <tt class="docutils literal"><span class="pre">compare</span></tt> will be
+the git-notes branch</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-finishing-up level-3">
+    <hgroup>
+      <h3>Finishing Up</h3>
+    </hgroup>
+    <article class="">
+      <p>When you're set, click <strong>Create pull request</strong></p>
+<div class="build container">
+<p>On the next screen, enter a note about why the PR should be merged</p>
+<p>Then click <strong>Create pull request</strong> again</p>
+<p>And now, your developer is done</p>
+<p>It's time for the manager to review</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-reviewing-a-pr level-3">
+    <hgroup>
+      <h3>Reviewing a PR</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_pr_review_tabs.png"><img alt="_images/github_pr_review_tabs.png" class="centered" src="_images/github_pr_review_tabs.png" style="width: 65%;" /></a>
+</div>
+<div class="build container">
+<p>In reviewing a pull request, the owner of a project is given quite a
+few tools</p>
+<p>This tab bar shows that you can view individual files, all changed
+files, or only the review commments made so far</p>
+<p>If you click on the code tabs, you can see the differences between the
+files in the <tt class="docutils literal"><span class="pre">from</span></tt> side and those in the <tt class="docutils literal"><span class="pre">to</span></tt> side</p>
+<p>And if you hover over a line, an icon offers a chance to add comments
+directly alongside the code</p>
+<p>So long as the request is open, changes made to the branch will be
+included</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-merging-the-pr level-3">
+    <hgroup>
+      <h3>Merging the PR</h3>
+    </hgroup>
+    <article class="">
+      <div class="figure">
+<a class="centered reference internal image-reference" href="_images/github_merge_pr.png"><img alt="_images/github_merge_pr.png" class="centered" src="_images/github_merge_pr.png" style="width: 70%;" /></a>
+</div>
+<div class="build container">
+<p>When work is completed to everyone's satisfaction, the <strong>PR</strong> can be
+merged</p>
+<p>The manager can click on the <strong>Conversation</strong> tab and look for this
+green button</p>
+<p>It indicates that the pull request can be merged without conflict</p>
+<p>If not present, work will be required to resolve conflicts before a
+merge can be completed.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-merge-your-pr level-3">
+    <hgroup>
+      <h3>Merge Your PR</h3>
+    </hgroup>
+    <article class="">
+      <p>Assuming you've been following along, you should be ready to merge your own
+pull request</p>
+<p>Go ahead and do so when you're ready</p>
+<p>When it's done, you've learned the basics of professional git workflow</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-pulling-changes level-3">
+    <hgroup>
+      <h3>Pulling Changes</h3>
+    </hgroup>
+    <article class="">
+      <p>Now that you've merged git-notes to master on GitHub, your local mster
+branch is out-of-date</p>
+<div class="build container">
+<p>To catch up, we have to pull the changes back</p>
+<p>Return to your terminal, and checkout the master branch of your
+repository</p>
+<p>Make sure to use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt> to verify that you have master checked
+out</p>
+<div class="container">
+<p>When ready, type the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git pull origin master
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-what-happened level-3">
+    <hgroup>
+      <h3>What happened</h3>
+    </hgroup>
+    <article class="">
+      <p>When you executed that command a few things took place:</p>
+<ul class="build simple">
+<li>Git <tt class="docutils literal"><span class="pre">fetched</span></tt> all of the changes on master to a local branch called
+origin/master</li>
+<li>Git <tt class="docutils literal"><span class="pre">merged</span></tt> the changes from origin/master to your local master branch</li>
+</ul>
+<div class="build container">
+<p>You can accomplish the same thing on your own as two commands</p>
+<p>But doing just one is so much easier</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-review level-1">
+    <hgroup>
+      <h1>Review</h1>
+    </hgroup>
+    <article class="">
+      <p>Take a moment to reflect</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-commands level-1">
+    <hgroup>
+      <h1>COMMANDS</h1>
+    </hgroup>
+    <article class="">
+      <p>We've added the following unix commands to our repertoire:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">command</th>
+<th class="head">purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">history</span></tt></td>
+<td>Interact with your command line history</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">less</span></tt></td>
+<td>Read large text inputs in a controlled fashion</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">mv</span></tt></td>
+<td>Move files from one place to another, or rename them, or both</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">touch</span></tt></td>
+<td>Create a new file, or update the modified date for an existing</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-more-commands level-1">
+    <hgroup>
+      <h1>More Commands</h1>
+    </hgroup>
+    <article class="">
+      <p>There are a few others you might want to know:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">command</th>
+<th class="head">purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">cp</span></tt></td>
+<td>Copy the contents of a file or directory to a new location</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">rm</span></tt></td>
+<td>Remove a file from the filesystem entirely</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">rmdir</span></tt></td>
+<td>Remove a directory from the filesystem if it is empty</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-commands level-3">
+    <hgroup>
+      <h3>Git Commands</h3>
+    </hgroup>
+    <article class="">
+      <p>We've also learned quite a few git commands</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></tt></dt>
+<dd>Creates a new repository in the <em>present working directory</em></dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt></dt>
+<dd>Shows the state of the repository and all files in the same directory,
+including ones not yet added</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;</span></tt></dt>
+<dd>Adds a new file to the repository, or adds a modified file to the stage
+so they can be committed</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt></dt>
+<dd>Commits all staged changes to files in the repository for safe keeping</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt></dt>
+<dd>Pushes all changes from your local repository to the named remote</dd>
+</dl>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-more-git-commands level-3">
+    <hgroup>
+      <h3>More Git Commands</h3>
+    </hgroup>
+    <article class="">
+      <dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></tt></dt>
+<dd>Create and manage new and existing branches in your repository</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span></tt></dt>
+<dd>Change the active branch and/or the location of HEAD``</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt></dt>
+<dd>Fetch and merge all changes from a remote repository branch to a local
+branch</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt></dt>
+<dd>Shows a list of the commits in the repository along with information
+about the time, owner and message associated with the change</dd>
+<dt><tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span></tt></dt>
+<dd>Set configuration for how git operates, either globally or per repository</dd>
+</dl>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-wrapping-up level-3">
+    <hgroup>
+      <h3>Wrapping Up</h3>
+    </hgroup>
+    <article class="">
+      <p>There's much much more that could be said</p>
+<div class="build container">
+<p>But that's all I've written up here</p>
+<p>If there's some spare time, we'd be happy to continue going over more
+advanced Unix commands or git operations</p>
+<p>However, what you've learned today is plenty and enough to serve you
+well for quite some time</p>
+<p>Master these fundamentals and you'll be well on your way to guru-hood</p>
+</div>
+
+
+
+
+    </article>
   </slide>
 
 
