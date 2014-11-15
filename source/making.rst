@@ -569,16 +569,317 @@ preserve a record of the actions we take.
         If you delete it (don't), your repository becomes just another
         directory
 
+.. slide:: CONCEPT: Hidden Files
+    :level: 2
 
+    .. rst-class:: left
+    .. container::
+    
+        This ``.git`` directory is an example of a *hidden file*
 
+        In Unix, any file whose name begins with ``.`` is, by default, not shown to
+        the user unless specifically asked for
 
+        This helps to keep the clutter associated with maintenance and
+        configuration out of sight
 
+        The ``.`` and ``..`` items in every directory on the filesystem are also
+        examples of this type of file
 
+        You know what they do, right?
 
+        Add a note to your ``unix_notes.txt`` about *hidden files*
 
+.. slide:: Tracking Changes
+    :level: 3
 
+    Now that your notes file has changed, you'll want to preserve that change
 
+    .. rst-class:: build
+    .. container::
+    
+        .. container::
+        
+            Start by viewing the ``status`` of your repository:
 
+            .. code-block:: bash
+            
+                $ git status
+                On branch master
+                Changes not staged for commit:
+                  (use "git add <file>..." to update what will be committed)
+                  (use "git checkout -- <file>..." to discard changes in working directory)
 
+                    modified:   unix_notes.txt
 
+                no changes added to commit (use "git add" and/or "git commit -a")
 
+        Notice that you have *two* choices, to ``add`` the file or to *discard* the
+        changes
+
+        Also notice that git offers you a choice to use ``git commit -a``
+
+        **Do Not Do That**
+
+.. slide:: Stage Your Changes
+    :level: 3
+
+    You have a file that has been changed, you must ``add`` the file to the
+    stage so it can be committed
+
+    .. rst-class:: build
+    .. container::
+    
+        .. code-block:: bash
+        
+            $ git add unix_notes.txt
+            $ git status
+            On branch master
+            Changes to be committed:
+              (use "git reset HEAD <file>..." to unstage)
+
+                modified:   unix_notes.txt
+
+        Notice that this time, the file is marked as *modified* instead of *new*
+
+        .. container::
+        
+            You can now commit it:
+
+            .. code-block:: bash
+            
+                $ git commit -m "added note about hidden files"
+                [master 4eca5ad] added note about hidden files
+                 1 file changed, 1 insertion(+)
+
+.. slide:: Simple Workflow
+    :level: 3
+
+    And that's the basics of git workflow
+
+    .. rst-class:: build
+    .. container::
+    
+        You create a repository **once**
+
+        Then you ``add`` a file or files to it and you ``commit`` those changes
+
+        Then you modify the files, ``add`` them to the stage and ``commit`` the
+        changes
+
+        Lather, rinse and repeat
+
+.. slide:: Building History
+    :level: 3
+        
+    Check your ``log`` to see the history of your changes unfold:
+
+    .. code-block:: bash
+    
+        $ git log
+        commit 4eca5ad05bb6e3bc92595a9703a3c5c8da410820
+        Author: cewing <cris@crisewing.com>
+        Date:   Sat Nov 15 04:11:17 2014 -0800
+
+            added note about hidden files
+
+        commit 0bc447c0cfd0b7856cd19c705e8eefa0c64283de
+        Author: cewing <cris@crisewing.com>
+        Date:   Sat Nov 15 03:33:09 2014 -0800
+
+            adding unix notes, first draft
+
+.. slide:: Stepping Back
+    :level: 1
+
+    In which we learn a bit about what's going on here
+
+.. slide:: What is git?
+    :level: 3
+
+    .. rst-class:: build
+    .. container::
+
+        A "version control system"
+
+        A history of everything you do to your files
+
+        A graph of "states" in which your files has existed
+
+        That last one is a bit tricky, so let's talk it over for a minute
+
+.. slide:: A Picture of git
+    :level: 3
+
+    .. figure:: /_static/git_simple_timeline.png
+        :width: 70%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        A git repository is a set of points in time, with history showing where
+        you've been.
+
+        Each point has a *name* (here *A*, *B*, *C*) that uniquely identifies it,
+        called a *hash*
+
+        The path from one point to the previous is represented by the *difference*
+        between the two points.
+
+.. slide:: A Picture of git
+    :level: 3
+
+    .. figure:: /_static/git_head.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        Each point in time can also have a label that points to it.
+
+        One of these is *HEAD*, which always points to the place in the timeline
+        that you are currently looking at.
+
+.. slide:: A Picture of git
+    :level: 3
+
+    .. figure:: /_static/git_master_branch.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        You may also be familiar with the label "master".
+
+        This is the name that git automatically gives to the first *branch* in a
+        repository.
+
+        A *branch* is actually just a label that points to a specific point in
+        time.
+
+.. slide:: A Picture of git
+    :level: 3
+
+    .. figure:: /_static/git_new_commit.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        When you make a *commit* in git, you add a new point to the timeline.
+
+        The HEAD label moves to this new point.
+
+        So does the label for the *branch* you are on.
+
+.. slide:: Making a Branch
+    :level: 3
+
+    .. figure:: /_static/git_new_branch.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        You can make a new *branch* with the ``branch`` command.
+
+        This adds a new label to the current commit.
+
+        Notice that it *does not* check out that branch.
+
+.. slide:: Try It Out
+    :level: 3
+
+    Go ahead and try this out yourself
+
+    .. rst-class:: build
+    .. container::
+    
+        Use the ``branch`` command to create a new *branch* for your repo called
+        *git-notes*:
+
+        .. code-block:: bash
+        
+            $ git branch git-notes
+
+        You can see the new branch by using the ``branch`` command without a name:
+
+        .. code-block:: bash
+        
+            $ git branch
+              git-notes
+            * master
+        
+        Notice that git tells you which branch you are on with an asterisk (``*`` )
+
+.. slide:: Switching Branches
+    :level: 3
+
+    .. figure:: /_static/git_checkout_branch.png
+        :width: 65%
+        :class: centered
+
+    .. rst-class:: build
+    .. container::
+
+        You can use the ``checkout`` command to switch to the new branch.
+
+        This associates the HEAD label with the *session01* label.
+
+.. slide:: Try It Out
+    :level: 3
+
+    Go ahead and try checking out your own new branch with ``checkout``
+
+    .. rst-class:: build
+    .. container::
+    
+        As you do so, visualize the changes that are happening
+
+        .. code-block:: bash
+        
+            $ git checkout git-notes
+
+        .. container::
+        
+            Use ``git branch`` to see which branch is *active*:
+
+            .. code-block:: bash
+            
+                $ git branch
+                * git-notes
+                  master
+
+.. slide:: Making a change
+    :level: 3
+
+    Now that you have the ``git-notes`` branch checked out, make some changes
+
+    .. rst-class:: build
+    .. container::
+    
+        First, add a new file to your repository called ``git_notes.txt``
+
+        .. container::
+        
+            To do so, use the unix ``touch`` command:
+
+            .. code-block:: bash
+            
+                $ touch git_notes.txt
+
+        .. container::
+        
+            Then, open the new file in your editor:
+
+            .. code-block:: bash
+            
+                $ subl git_notes.txt
+
+        Take the next ten minutes to write down your notes on what you've
+        learned about git so far
