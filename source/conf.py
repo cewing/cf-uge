@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Unix and Git for Everyone documentation build configuration file, created by
+# Git & Unix for Everyone documentation build configuration file, created by
 # sphinx-quickstart on Fri Nov 14 11:41:40 2014.
 #
 # This file is execfile()d with the current directory set to its
@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Unix and Git for Everyone'
+project = u'Git & Unix for Everyone'
 copyright = u'2014, Ryan Sobol and Cris Ewing'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'UnixandGitforEveryonedoc'
+htmlhelp_basename = 'GitAndUnixforEveryonedoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -203,7 +203,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'UnixandGitforEveryone.tex', u'Unix and Git for Everyone Documentation',
+  ('index', 'GitAndUnixforEveryone.tex', u'Git & Unix for Everyone Documentation',
    u'Ryan Sobol and Cris Ewing', 'manual'),
 ]
 
@@ -233,7 +233,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'unixandgitforeveryone', u'Unix and Git for Everyone Documentation',
+    ('index', 'unixandgitforeveryone', u'Git & Unix for Everyone Documentation',
      [u'Ryan Sobol and Cris Ewing'], 1)
 ]
 
@@ -247,8 +247,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'UnixandGitforEveryone', u'Unix and Git for Everyone Documentation',
-   u'Ryan Sobol and Cris Ewing', 'UnixandGitforEveryone', 'One line description of project.',
+  ('index', 'GitAndUnixforEveryone', u'Git & Unix for Everyone Documentation',
+   u'Ryan Sobol and Cris Ewing', 'GitAndUnixforEveryone', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -271,9 +271,10 @@ extensions += [
     'hieroglyph',
 ]
 
-slide_title = 'Unix and Git for Everyone'
+slide_title = 'Git & Unix for Everyone'
 slide_theme = 'slides2'
 slide_levels = 3
+autoslides = False
 
 # Place custom static assets in the _static directory and uncomment
 # the following lines to include them
@@ -305,13 +306,13 @@ slide_theme_options = {
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Unix and Git for Everyone'
+epub_title = u'Git & Unix for Everyone'
 epub_author = u'Ryan Sobol and Cris Ewing'
 epub_publisher = u'Ryan Sobol and Cris Ewing'
 epub_copyright = u'2014, Ryan Sobol and Cris Ewing'
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = u'Unix and Git for Everyone'
+#epub_basename = u'Git & Unix for Everyone'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is
