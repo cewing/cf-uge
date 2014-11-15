@@ -474,15 +474,19 @@ terminal.
         ambiguity about where to start looking**
 
 .. slide:: CONCEPT: The Root
+    :level: 2
 
-    The **root** is the topmost container of a computer filesystem
+    .. rst-class:: left
+    .. container::
 
-    Everything on the computer can be said to be contained in **the root** or
-    in a container that is contained there
+        The **root** is the topmost container of a computer filesystem
 
-    Absolute paths always begin with **the root**, so that there is no doubt
-    about where to begin moving through the filesystem
+        Everything on the computer can be said to be contained in **the root** or
+        in a container that is contained there
 
-    **The root** is generally restricted to administrative users
+        Absolute paths always begin with **the root**, so that there is no doubt
+        about where to begin moving through the filesystem
 
-    You should never delete anything located directly in **the root**
+        **The root** is generally restricted to administrative users
+
+        You should never delete anything located directly in **the root**
