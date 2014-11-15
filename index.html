@@ -1,0 +1,472 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+--><!DOCTYPE html>
+
+
+<html>
+<head>
+  <title>Git &amp; Unix for Everyone &mdash; Git &amp; Unix for Everyone</title>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <link rel="stylesheet" media="all"
+        href="_static/theme/css/default.css">
+  <link rel="stylesheet" media="all"
+        href="_static/theme/css/hieroglyph.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)"
+        href="_static/theme/css/phone.css">
+
+    
+    <link rel="stylesheet" href="_static/custom.css"
+          type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2014.11.14',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script data-main="_static/js/slides"
+            src="_static/js/require-1.0.8.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <link rel="top" title="Git &amp; Unix for Everyone" href="#" /> 
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+  <aside class="gdbar"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
+  <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+  <hgroup class="auto-fadein">
+    <h1 data-config-title><!-- populated from slide_config.json --></h1>
+    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    <p data-config-presenter><!-- populated from slide_config.json --></p>
+  </hgroup>
+</slide>
+
+  
+    <slide class="admonition-git-unix-for-everyone level-3">
+    <hgroup>
+      <h3>Git &amp; Unix for Everyone</h3>
+    </hgroup>
+    <article class="">
+      <p><em>Goals</em>:</p>
+<ul class="build simple">
+<li>Comfort and agility at the command line</li>
+<li>Mastery of basic versioning workflow with git</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-today-s-agenda level-3">
+    <hgroup>
+      <h3>Today's Agenda</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Find/Install your command line</li>
+<li>Get accustomed to finding your way around</li>
+<li>Create a journal to record what you learn</li>
+<li>Put your journal into version control with basic git workflow</li>
+<li>Learn some more advanced shell commands</li>
+<li>Learn some more advanced git commands</li>
+</ul>
+<div class="build container">
+<p>Along the way, you'll get a chance to learn more about the history of
+unix.</p>
+<p>And you'll gain a deeper understanding of what exactly git does when
+you use it.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-by-the-end-of-today level-3">
+    <hgroup>
+      <h3>By The End Of Today</h3>
+    </hgroup>
+    <article class="">
+      <p>Using only your browser, your text editor and your command line, you'll be
+able to</p>
+<ul class="build simple">
+<li>move around and manipulate files with confidence</li>
+<li>learn about commands</li>
+<li>run programs</li>
+<li>control access to your filesystem</li>
+<li>create a git repository from scratch</li>
+<li>fork someone else's repository</li>
+<li>clone a repository to your laptop</li>
+<li>add, edit and remove items from a repository</li>
+<li>interact with the owners of other repositories using github</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-unix-commands level-1">
+    <hgroup>
+      <h1>Unix Commands</h1>
+    </hgroup>
+    <article class="">
+      <p>A bit of history and context</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-what-is-unix level-3">
+    <hgroup>
+      <h3>What is Unix?</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Multiuser Multitasking Operating System</li>
+<li>Unix can be a lot of things<ul class="build">
+<li>A desktop</li>
+<li>A server</li>
+<li>A super computer</li>
+<li>A phone</li>
+<li>An embedded system</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-history level-3">
+    <hgroup>
+      <h3>History</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Created at AT&amp;T's Bell labs by Ken Thompson and Dennis Ritchie</li>
+<li>In 1983 Richard Stallman began the creation of GNU Project (Gnu's not
+Unix) with the intention of creating an open source version of Unix</li>
+<li>In 1991, a student at Helsinki name Linus Torvalds created a small unix
+kernel for his 80386 PC</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-announcing-linux level-3">
+    <hgroup>
+      <h3>Announcing Linux</h3>
+    </hgroup>
+    <article class="">
+      <p>Hello everybody out there using minix -</p>
+<p>I'm doing a (free) operating system (just a hobby, won't be big and
+professional like gnu) for 386(486) AT clones. This has been brewing
+since april, and is starting to get ready. I'd like any feedback on
+things people like/dislike in minix, as my OS resembles it somewhat
+(same physical layout of the file-system (due to practical reasons)
+among other things).</p>
+<p>I've currently ported bash(1.08) and gcc(1.40), and things seem to work.
+This implies that I'll get something practical within a few months, and I'd
+like to know what features most people would want. Any suggestions are
+welcome, but I won't promise I'll implement them :-)</p>
+<p>Linus (<a class="reference external" href="mailto:torvalds&#37;&#52;&#48;kruuna&#46;helsinki&#46;fi">torvalds<span>&#64;</span>kruuna<span>&#46;</span>helsinki<span>&#46;</span>fi</a>)</p>
+<p>PS. Yes it's free of any minix code, and it has a multi-threaded fs. It
+is NOT portable (uses 386 task switching etc), and it probably never will
+support anything other than AT-harddisks, as that's all I have :-(.</p>
+<p>Linus Torvalds</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-history level-3">
+    <hgroup>
+      <h3>History</h3>
+    </hgroup>
+    <article class="">
+      <p>Linux is now the largest software project that has ever existed in the
+history of computing,</p>
+<p>Why?</p>
+<ul class="build simple">
+<li>open source</li>
+<li>anyone can work on it.</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-current-state-of-unix-on-the-desktop level-3">
+    <hgroup>
+      <h3>Current State of Unix on the Desktop</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Linux</li>
+<li>BSD (Berkeley Software Distribution)</li>
+<li>Mac OSX (Darwin)</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-philosophy level-3">
+    <hgroup>
+      <h3>Philosophy</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Everything is a file<ul class="build">
+<li>Including pieces of the Kernel and hardware</li>
+<li>Linux exposes these interfaces in /proc and /sys</li>
+<li>OSX does not directly expose these interfaces to the user, instead use
+sysctl</li>
+</ul>
+</li>
+<li>&quot;Do one thing and do it well&quot;</li>
+<li>&quot;Every output can become the input of another program&quot;</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-two-major-unix-components level-3">
+    <hgroup>
+      <h3>Two Major Unix Components</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Kernel<ul class="build">
+<li>Is the absolute core of the OS</li>
+<li>Determines what runs on the CPU</li>
+<li>Interacts directly with the hardware</li>
+</ul>
+</li>
+<li>The shell<ul class="build">
+<li>How the user interacts with the operating system</li>
+</ul>
+</li>
+<li>Represent two different execution environments on a Unix<ul class="build">
+<li>Kernel space</li>
+<li>User space</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-kernel-space level-3">
+    <hgroup>
+      <h3>Kernel Space</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>Represents the &quot;admin&quot; user space</li>
+<li>Directly affects the hardware, filesystem and how the system itself runs</li>
+<li>You need elevated access in order to manipulate anything here</li>
+<li>At the same time, users need to be able to access things like hardware
+and the filesystem</li>
+<li>The kernel provides &quot;system calls&quot; that check permissions and allow or
+disallow certain actions</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-user-space level-3">
+    <hgroup>
+      <h3>User Space</h3>
+    </hgroup>
+    <article class="">
+      <ul class="build simple">
+<li>All the actions that aren't in Kernel Space</li>
+<li>Has to use system calls in order access the hardware</li>
+<li>Manifests as a &quot;shell&quot; run in a terminal program</li>
+</ul>
+<div class="build container">
+<p>This is where we will spend our time today</p>
+<p>(and for the for the forseeable future)</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-working-on-the-command-line level-1">
+    <hgroup>
+      <h1>Working on the Command Line</h1>
+    </hgroup>
+    <article class="">
+      <p>Getting to know your way around</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-your-first-terminal-session level-3">
+    <hgroup>
+      <h3>Your First Terminal Session</h3>
+    </hgroup>
+    <article class="">
+      <p>Locate and open your terminal</p>
+<ul class="build simple">
+<li>Linux Users<ul>
+<li>Use the keyboard shortcut <tt class="docutils literal"><span class="pre">Ctrl-Alt-T</span></tt></li>
+</ul>
+</li>
+<li>OSX Users<ul>
+<li>launch <tt class="docutils literal"><span class="pre">Finder</span></tt></li>
+<li>go to <tt class="docutils literal"><span class="pre">Applications</span></tt> &gt; <tt class="docutils literal"><span class="pre">Utilities</span></tt></li>
+<li>click on <tt class="docutils literal"><span class="pre">Terminal</span></tt></li>
+<li>right-click on dock icon, click <tt class="docutils literal"><span class="pre">Options</span></tt> &gt; <tt class="docutils literal"><span class="pre">Keep</span> <span class="pre">In</span> <span class="pre">Dock</span></tt></li>
+</ul>
+</li>
+<li>Windows Users<ul>
+<li>you'll use <tt class="docutils literal"><span class="pre">git-bash</span></tt> instead of the windows command prompt</li>
+<li>right-click on desktop</li>
+<li>select <tt class="docutils literal"><span class="pre">Git</span> <span class="pre">Bash</span></tt></li>
+<li>if not already set, right-click taskbar icon and select 'pin this
+program to the taskbar'</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-reading-the-prompt level-3">
+    <hgroup>
+      <h3>Reading the Prompt</h3>
+    </hgroup>
+    <article class="">
+      <p>The first stuff you see in your terminal is called <em>the prompt</em>.</p>
+<div class="build container">
+<p>It will include your username, where you are, and what machine this
+terminal is on.</p>
+<p>By default:</p>
+<ul class="build simple">
+<li>OSX:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>machine_name:current_directory username$
+</pre></div>
+</div>
+<ul class="simple">
+<li>Linux:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>username@machine_name:current_path$
+</pre></div>
+</div>
+<ul class="simple">
+<li>Windows (git-bash):</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>username@machine_name current_path
+$
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-home-is-where-your-stuff-is level-3">
+    <hgroup>
+      <h3>Home Is Where Your Stuff Is</h3>
+    </hgroup>
+    <article class="">
+      <p>In general, most systems will open a terminal in your <em>home directory</em></p>
+<div class="build container">
+<p>This is a folder on the computer filesystem that belongs to you.</p>
+<p>You put your work here, configure settings for many programs and so on.</p>
+<p>You can see where you are using the shell command <tt class="docutils literal"><span class="pre">pwd</span></tt></p>
+<p>Type that command into your terminal now</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-command-pwd level-2">
+    <hgroup>
+      <h2>COMMAND: pwd</h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">pwd</span></tt> command shows the <em>present working directory</em></p>
+<p>OSX</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">pwd</span>
+/Users/cewing/projects
+</pre></div>
+</div>
+<p>Linux</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">pwd</span>
+/home/cewing/projects
+</pre></div>
+</div>
+<p>Windows (git-bash)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">pwd</span>
+/c/Users/Cris Ewing/projects
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>
+
+
+    <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>&nbsp;</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
