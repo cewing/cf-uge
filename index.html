@@ -420,7 +420,7 @@ $
     </article>
   </slide>  <slide class="admonition-command-pwd level-2">
     <hgroup>
-      <h2>COMMAND: pwd</h2>
+      <h2>COMMAND: <tt class="docutils literal"><span class="pre">pwd</span></tt></h2>
     </hgroup>
     <article class="">
       <div class="left container">
@@ -441,6 +441,148 @@ $
 </pre></div>
 </div>
 </div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-concept-the-path level-2">
+    <hgroup>
+      <h2>CONCEPT: The Path</h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>In any computer system, a <strong>path</strong> represents a location in the
+filesystem.</p>
+<div class="build container">
+<p>Paths are like addresses, listing a location from the general to the
+specific.</p>
+<p>A bit like addressing an envelope backwards:</p>
+<div class="line-block">
+<div class="line">USA</div>
+<div class="line">Seattle, WA 98105</div>
+<div class="line">123 Somestreet</div>
+<div class="line">Cris Ewing</div>
+<div class="line"><br /></div>
+</div>
+<p>vs.</p>
+<div class="line-block">
+<div class="line">/home/cewing/projects/someproject</div>
+<div class="line"><br /></div>
+</div>
+<p>A path is <em>absolute</em> when it starts with <tt class="docutils literal"><span class="pre">/</span></tt></p>
+<p>A path is <em>relative</em> when it does not</p>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-question level-2">
+    <hgroup>
+      <h2>QUESTION</h2>
+    </hgroup>
+    <article class="">
+      <p>Is the <strong>path</strong> returned by the <tt class="docutils literal"><span class="pre">pwd</span></tt> command <em>absolute</em> or <em>relative</em>?</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-moving-around level-3">
+    <hgroup>
+      <h3>Moving Around</h3>
+    </hgroup>
+    <article class="">
+      <p>Movement is basic to life.</p>
+<div class="build container">
+<p>All operating systems distribute resources among many <em>directories</em></p>
+<p>To be a power user of the command line, you must be able to move
+around.</p>
+<p>The command for moving from one directory to another is called <tt class="docutils literal"><span class="pre">cd</span></tt></p>
+<p>It takes a <em>path</em> as its one required argument</p>
+<p>This tells the terminal the address where you want to go</p>
+<p>This path can be <em>absolute</em> <strong>or</strong> <em>relative</em>.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-command-cd level-3">
+    <hgroup>
+      <h3>COMMAND: <tt class="docutils literal"><span class="pre">cd</span></tt></h3>
+    </hgroup>
+    <article class="">
+      <p>The <tt class="docutils literal"><span class="pre">cd</span></tt> command allows you to <em>change directories</em></p>
+<p>It takes a <em>path</em> as an argument (<em>absolute</em> or <em>relative</em>)</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-to-the-root level-3">
+    <hgroup>
+      <h3>To the Root</h3>
+    </hgroup>
+    <article class="">
+      <p>Before we begin, use <tt class="docutils literal"><span class="pre">pwd</span></tt> again to show the path to your <em>home
+directory</em></p>
+<div class="build container">
+<p>Write this value down</p>
+<p>You'll use it in a moment to get back</p>
+<p>Now type the following command at your prompt:</p>
+<div class="container">
+<p>OSX/Linux:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /
+</pre></div>
+</div>
+<p>Windows:</p>
+<div class="highlight-language"><div class="highlight"><pre>$ cd /c
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-to-the-root level-3">
+    <hgroup>
+      <h3>To the Root</h3>
+    </hgroup>
+    <article class="">
+      <p>You've just changed directories.</p>
+<div class="build container">
+<p>The address you supplied to the <tt class="docutils literal"><span class="pre">cd</span></tt> command was for the <em>root</em> of
+your computer</p>
+<p>(Windows users, this isn't <em>exactly</em> true, but it's true enough for
+today)</p>
+<p>This is the very topmost container in your filesystem</p>
+<p>Everything else is located inside this directory, or in a directory
+whose <em>path</em> starts here.</p>
+<p><strong>paths that start with the root are absolute because there can be no
+ambiguity about where to start looking</strong></p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-concept-the-root level-1">
+    <hgroup>
+      <h1>CONCEPT: The Root</h1>
+    </hgroup>
+    <article class="">
+      <p>The <strong>root</strong> is the topmost container of a computer filesystem</p>
+<p>Everything on the computer can be said to be contained in <strong>the root</strong> or
+in a container that is contained there</p>
+<p>Absolute paths always begin with <strong>the root</strong>, so that there is no doubt
+about where to begin moving through the filesystem</p>
+<p><strong>The root</strong> is generally restricted to administrative users</p>
+<p>You should never delete anything located directly in <strong>the root</strong></p>
 
 
 

@@ -322,7 +322,7 @@ terminal.
         Type that command into your terminal now
 
 
-.. slide:: COMMAND: pwd
+.. slide:: COMMAND: ``pwd``
     :level: 2
 
     .. rst-class:: left
@@ -350,3 +350,139 @@ terminal.
         
             $ pwd
             /c/Users/Cris Ewing/projects
+
+.. slide:: CONCEPT: The Path
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+    
+        In any computer system, a **path** represents a location in the
+        filesystem.
+
+        .. rst-class:: build
+
+        .. container::
+        
+            Paths are like addresses, listing a location from the general to the
+            specific.
+
+            A bit like addressing an envelope backwards:
+
+            | USA
+            | Seattle, WA 98105
+            | 123 Somestreet
+            | Cris Ewing
+            |
+
+            vs.
+
+            | /home/cewing/projects/someproject
+            |
+
+            A path is *absolute* when it starts with ``/``
+
+            A path is *relative* when it does not
+
+.. slide:: QUESTION
+    :level: 2
+
+    Is the **path** returned by the ``pwd`` command *absolute* or *relative*?
+
+.. slide:: Moving Around
+    :level: 3
+
+    Movement is basic to life.
+
+    .. rst-class:: build
+
+    .. container::
+    
+        All operating systems distribute resources among many *directories*
+
+        To be a power user of the command line, you must be able to move
+        around.
+
+        The command for moving from one directory to another is called ``cd``
+
+        It takes a *path* as its one required argument
+
+        This tells the terminal the address where you want to go
+
+        This path can be *absolute* **or** *relative*.
+
+.. slide:: COMMAND: ``cd``
+    :level: 3
+
+    The ``cd`` command allows you to *change directories*
+
+    It takes a *path* as an argument (*absolute* or *relative*)
+
+
+
+.. slide:: To the Root
+    :level: 3
+
+    Before we begin, use ``pwd`` again to show the path to your *home
+    directory*
+
+    .. rst-class:: build
+
+    .. container::
+    
+        Write this value down
+
+        You'll use it in a moment to get back
+
+        Now type the following command at your prompt:
+
+        .. container::
+        
+            OSX/Linux:
+
+            .. code-block:: bash
+
+                $ cd /
+
+            Windows:
+
+            .. code-block:: language
+            
+                $ cd /c
+
+.. slide:: To the Root
+    :level: 3
+
+    You've just changed directories.
+
+    .. rst-class:: build
+
+    .. container::
+    
+        The address you supplied to the ``cd`` command was for the *root* of
+        your computer
+
+        (Windows users, this isn't *exactly* true, but it's true enough for
+        today)
+
+        This is the very topmost container in your filesystem
+
+        Everything else is located inside this directory, or in a directory
+        whose *path* starts here.
+
+        **paths that start with the root are absolute because there can be no
+        ambiguity about where to start looking**
+
+.. slide:: CONCEPT: The Root
+
+    The **root** is the topmost container of a computer filesystem
+
+    Everything on the computer can be said to be contained in **the root** or
+    in a container that is contained there
+
+    Absolute paths always begin with **the root**, so that there is no doubt
+    about where to begin moving through the filesystem
+
+    **The root** is generally restricted to administrative users
+
+    You should never delete anything located directly in **the root**
