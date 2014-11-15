@@ -1,0 +1,682 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+--><!DOCTYPE html>
+
+
+<html>
+<head>
+  <title>Git &amp; Unix for Everyone &mdash; Git &amp; Unix for Everyone</title>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <link rel="stylesheet" media="all"
+        href="_static/theme/css/default.css">
+  <link rel="stylesheet" media="all"
+        href="_static/theme/css/hieroglyph.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)"
+        href="_static/theme/css/phone.css">
+
+    
+    <link rel="stylesheet" href="_static/custom.css"
+          type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2014.11.14',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script data-main="_static/js/slides"
+            src="_static/js/require-1.0.8.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <link rel="top" title="Git &amp; Unix for Everyone" href="index.html" /> 
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+  <aside class="gdbar"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
+  <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+  <hgroup class="auto-fadein">
+    <h1 data-config-title><!-- populated from slide_config.json --></h1>
+    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    <p data-config-presenter><!-- populated from slide_config.json --></p>
+  </hgroup>
+</slide>
+
+  
+    <slide class="admonition-manipulating-the-filesystem level-3">
+    <hgroup>
+      <h3>Manipulating the Filesystem</h3>
+    </hgroup>
+    <article class="">
+      <p>Learn to make, move, and modify</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-captured-history level-3">
+    <hgroup>
+      <h3>Captured History</h3>
+    </hgroup>
+    <article class="">
+      <p>One way to help cement learning is to take notes</p>
+<div class="build container">
+<p>You've already spent quite some time learning today, but have yet to take
+any notes</p>
+<p>Or have you?</p>
+<p>As it turns out, your shell keeps track of what you do as you do it</p>
+<p>You can look over this record using the <tt class="docutils literal"><span class="pre">history</span></tt> command</p>
+<div class="container">
+<p>Try it out:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">history</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-reading-history level-3">
+    <hgroup>
+      <h3>Reading History</h3>
+    </hgroup>
+    <article class="">
+      <p>You should see something like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>...
+<span class="m">432</span>  ls
+<span class="m">433</span>  ls -l
+<span class="m">434</span>  <span class="nb">cd </span>projects/
+<span class="m">435</span>  ls
+<span class="m">436</span>  ls -l
+<span class="m">437</span>  <span class="nb">cd </span>training/
+<span class="m">438</span>  ls
+<span class="m">439</span>  ls -l
+<span class="m">440</span>  <span class="nb">cd</span> /
+<span class="m">441</span>  <span class="nb">cd</span>
+<span class="m">442</span>  cdcd
+<span class="m">443</span>  cdcd
+<span class="m">444</span>  <span class="nb">cd</span> /
+<span class="m">445</span>  <span class="nb">cd</span>
+<span class="m">446</span>  <span class="nb">cd</span>
+<span class="m">447</span>  ls
+</pre></div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-command-history level-2">
+    <hgroup>
+      <h2>COMMAND: <tt class="docutils literal"><span class="pre">history</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">history</span></tt> command allows you to review and revise the history of
+actions you've taken in a shell</p>
+<p>Providing a numeric argument will list the last <em>n</em> actions:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">history </span>5
+<span class="m">443</span>  cdcd
+<span class="m">444</span>  <span class="nb">cd</span> /
+<span class="m">445</span>  <span class="nb">cd</span>
+<span class="m">446</span>  <span class="nb">cd</span>
+<span class="m">447</span>  ls
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-paging-through-history level-3">
+    <hgroup>
+      <h3>Paging Through History</h3>
+    </hgroup>
+    <article class="">
+      <p>There's probably a lot more output from that command than fits in one
+screen of your terminal</p>
+<div class="build container">
+<p>Most of it scrolled by too fast to read</p>
+<p>You could read the last <em>n</em> actions</p>
+<div class="container">
+<p>Or you can review it all at your leisure by combining the <tt class="docutils literal"><span class="pre">history</span></tt>
+command with another command <tt class="docutils literal"><span class="pre">less</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">history</span> <span class="p">|</span> less
+</pre></div>
+</div>
+</div>
+<p>The <em>pipe</em> character (<tt class="docutils literal"><span class="pre">|</span></tt>) takes the output from the first command
+and uses it as input to the second</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-chain-of-commands level-3">
+    <hgroup>
+      <h3>Chain of Commands</h3>
+    </hgroup>
+    <article class="">
+      <p>Remember the Unix Philosophy:</p>
+<div class="highlight-python"><div class="highlight"><pre>Do one thing and do it well
+Every output can become the input of another program
+</pre></div>
+</div>
+<div class="build container">
+<p>Here, the text output by <tt class="docutils literal"><span class="pre">history</span></tt> is taken as input to the command
+<tt class="docutils literal"><span class="pre">less</span></tt></p>
+<p>That command allows you to control the rate of scrolling for longer files</p>
+<p>You can press <strong>enter</strong> to move one line forward at a time</p>
+<p>Or press <strong>space</strong> to move a full screen forward at once</p>
+<p>You can also move forward arbitrary numbers of lines, or backward!</p>
+<p>Try <tt class="docutils literal"><span class="pre">man</span> <span class="pre">less</span></tt> to learn more about this useful comand</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-command-less level-2">
+    <hgroup>
+      <h2>COMMAND: <tt class="docutils literal"><span class="pre">less</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">less</span></tt> command allows the user to control movement through the
+reading of a file</p>
+<p>It provides controls for moving forward or backward through files at
+increments of an arbitrary number of lines or screens</p>
+<p>It does not read entire files before starting, and so is very fast</p>
+<p>It is particularly well suited to input <em>piped</em> from other commands
+that produce large amounts of text</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-concept-piping level-2">
+    <hgroup>
+      <h2>CONCEPT: Piping</h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <em>pipe</em> (<tt class="docutils literal"><span class="pre">|</span></tt>) can be used to use the output of one command as the
+input to another</p>
+<p>This <em>chaining</em> of commands allows the savvy user to combine simple unix
+commands into complex processes with little effort and powerful results</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-saving-history level-3">
+    <hgroup>
+      <h3>Saving History</h3>
+    </hgroup>
+    <article class="">
+      <p>But there's more you can do with this history</p>
+<div class="build container">
+<p>Begin by making sure that you are in your <em>home directory</em> using <tt class="docutils literal"><span class="pre">pwd</span></tt>,
+<tt class="docutils literal"><span class="pre">ls</span></tt> and <tt class="docutils literal"><span class="pre">cd</span></tt></p>
+<div class="container">
+<p>Next, you'll use the <em>redirection</em> operator (<tt class="docutils literal"><span class="pre">&gt;</span></tt>) to take the output from
+<tt class="docutils literal"><span class="pre">history</span></tt> and write it to a file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">history</span> &gt; moving_around.txt
+</pre></div>
+</div>
+</div>
+<p>You can use <tt class="docutils literal"><span class="pre">ls</span></tt> to verify that the new file &quot;moving_around.txt&quot; exists</p>
+<p>You can use the <tt class="docutils literal"><span class="pre">t</span></tt> flag to verify that it's the newest file in your home
+directory</p>
+<p>You can even use the <tt class="docutils literal"><span class="pre">less</span></tt> command to read it and verify that it
+contains your history.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-concept-redirection level-2">
+    <hgroup>
+      <h2>CONCEPT: Redirection</h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <em>redirection</em> operator (<tt class="docutils literal"><span class="pre">&gt;</span></tt>) sends the output of a command on the
+left side to a file named on the right</p>
+<p>If the named file does not exist, it is created</p>
+<p>If it does exist, it is overwritten</p>
+<p>If the operator is doubled (<tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt>) then output is <em>added</em> to an existing
+file instead of replacing it</p>
+<p>You can do a <em>lot</em> more with redirection (try googling for <em>bash
+redirection</em>) but thats enough for today</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-take-notes level-3">
+    <hgroup>
+      <h3>Take Notes</h3>
+    </hgroup>
+    <article class="">
+      <p>Now that you have this file with your command history, open it in your
+editor:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>subl moving_around.txt
+</pre></div>
+</div>
+<div class="build container">
+<p>Take the next 10 minutes or so to edit that history</p>
+<p>Add notes to lines after the commands you found particularly interesting or
+surprising</p>
+<p>Add information explaining the purpose of a command, and the result</p>
+<p>You can delete boring lines or even your embarassing mistakes</p>
+<p>Take this opportunity to ask your instructors questions, if you haven't
+already</p>
+<p>Make sure you understand everything you've done so far today</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-keep-it-safe level-3">
+    <hgroup>
+      <h3>Keep It Safe</h3>
+    </hgroup>
+    <article class="">
+      <p>Come to think of it, it might be nice to keep these notes (and more you'll
+make today) safe</p>
+<div class="build container">
+<p>Let's begin by making a place to keep them</p>
+<div class="container">
+<p>Use the <tt class="docutils literal"><span class="pre">mkdir</span></tt> command to create a new directory here in your <em>home
+directory</em> to hold these notes:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir gue_workshop
+</pre></div>
+</div>
+</div>
+<p>Use <tt class="docutils literal"><span class="pre">ls</span></tt> to confirm that the new directory exists</p>
+<p>Use the <tt class="docutils literal"><span class="pre">l</span></tt> flag with ls to confirm that the new directory is a directory</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-put-things-in-their-place level-3">
+    <hgroup>
+      <h3>Put Things in Their Place</h3>
+    </hgroup>
+    <article class="">
+      <p>Now that you have a directory to hold your notes, move them on in</p>
+<div class="build container">
+<p>You can use the <tt class="docutils literal"><span class="pre">mv</span></tt> command to move a file from one place to another</p>
+<p>This command is a bit different from others we've seen in that it requires
+<em>two</em> paths</p>
+<p>The first is the address of the thing you want to move</p>
+<p>The second is the address of where you want to put it</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv moving_around.txt ./gue_workshop/
+</pre></div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-better-names level-3">
+    <hgroup>
+      <h3>Better Names</h3>
+    </hgroup>
+    <article class="">
+      <p>Actually, the filename &quot;moving_around.txt&quot; is not all that great</p>
+<p>We should rename it to something better, like &quot;unix_notes.txt&quot;</p>
+<div class="container">
+<p>You can use the <tt class="docutils literal"><span class="pre">mv</span></tt> command to do this, too:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv ./gue_workshop/moving_around.txt ./gue_workshop/unix_notes.txt
+</pre></div>
+</div>
+</div>
+<p>That's better</p>
+<p>Don't forget to add any notes you might want about <tt class="docutils literal"><span class="pre">mv</span></tt> to your newly
+renamed file</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-command-mv level-2">
+    <hgroup>
+      <h2>COMMAND: <tt class="docutils literal"><span class="pre">mv</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">mv</span></tt> command allows <em>moving</em> files from place to place in a
+filesystem</p>
+<p>The command expects two paths: a thing to be moved and a place to move
+it</p>
+<p>The command can be used to move files and also to rename them</p>
+<p><em>Flags</em> allow you to handle conditions like there being a file of the
+same name already in the destination in various ways</p>
+<p>Try <tt class="docutils literal"><span class="pre">man</span> <span class="pre">mv</span></tt> to learn more about this command</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-saving-your-work level-3">
+    <hgroup>
+      <h3>Saving Your Work</h3>
+    </hgroup>
+    <article class="">
+      <p>You've got all these great notes</p>
+<div class="build container">
+<p>It'd be terrible if something were to happen to them</p>
+<p>This is where having something like version control can come in handy</p>
+<p>It can allow you to keep a history of your work on a project like this
+safe</p>
+<p>And can also allow you to collaborate with others over time</p>
+<p>We'll start by creating a <em>repository</em> for our work from today</p>
+<p>We'll be using the <tt class="docutils literal"><span class="pre">git</span></tt> Distributed Version Control System</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-install-git level-3">
+    <hgroup>
+      <h3>Install Git</h3>
+    </hgroup>
+    <article class="">
+      <p>If you haven't already done so, please download and install git now</p>
+<q>
+<a class="reference external" href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></q>
+<p>Windows users, please install git from here instead:</p>
+<q>
+<a class="reference external" href="http://msysgit.github.io/">http://msysgit.github.io/</a></q>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-basic-configuration level-3">
+    <hgroup>
+      <h3>Basic Configuration</h3>
+    </hgroup>
+    <article class="">
+      <p>You should also be sure to set up the basic configuration git requires</p>
+<div class="build container">
+<p>In order to make commits, git wants to know your name and email address</p>
+<div class="container">
+<p>We use the <tt class="docutils literal"><span class="pre">config</span></tt> git command to set these up:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git config --global user.name <span class="s2">&quot;Cris Ewing&quot;</span>
+<span class="nv">$ </span>git config --global user.email <span class="s2">&quot;cris@crisewing.com&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>This will allow git to record that you made changes, and to provide
+contact information for any who wish to consult with you</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-your-first-repository level-3">
+    <hgroup>
+      <h3>Your First Repository</h3>
+    </hgroup>
+    <article class="">
+      <p>Once git is installed and configured, creating your first repository is a
+snap</p>
+<p>Begin by changing directories into the one that holds the files you want to
+save</p>
+<p>In your case, that's the new <tt class="docutils literal"><span class="pre">gue_workshop</span></tt> directory you just created a
+moment ago</p>
+<p>Once there, use the <tt class="docutils literal"><span class="pre">init</span></tt> git command to create a new repository</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git init
+Initialized empty Git repository in /home/cewing/gue_workshop/.git
+</pre></div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-what-s-up-git level-3">
+    <hgroup>
+      <h3>What's Up, Git?</h3>
+    </hgroup>
+    <article class="">
+      <p>You can now check the status of your repository using <tt class="docutils literal"><span class="pre">status</span></tt>:</p>
+<div class="build container">
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="o">)</span>
+
+    unix_notes.txt
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
+</pre></div>
+</div>
+<p>Notice that git is quite verbose in telling you what's going on</p>
+<p>You can see that you have one untracked file</p>
+<p>Git even tells you what to do next</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-adding-your-first-file level-3">
+    <hgroup>
+      <h3>Adding your first file</h3>
+    </hgroup>
+    <article class="">
+      <p>A repository is simply a collection of things you care about</p>
+<div class="build container">
+<p>In order for git to save anything, it must first be <tt class="docutils literal"><span class="pre">added</span></tt> to the
+repository</p>
+<div class="container">
+<p>Use the <tt class="docutils literal"><span class="pre">add</span></tt> command to add your <tt class="docutils literal"><span class="pre">unix_notes.txt</span></tt> file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git add unix_notes.txt
+</pre></div>
+</div>
+</div>
+<p>There should be no output here, but your file has now been added</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-question level-2">
+    <hgroup>
+      <h2>QUESTION</h2>
+    </hgroup>
+    <article class="">
+      <p>How can you tell that the file has been added to the repository?</p>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-always-check-status level-3">
+    <hgroup>
+      <h3>Always Check Status</h3>
+    </hgroup>
+    <article class="">
+      <p>Of course, you use <tt class="docutils literal"><span class="pre">status</span></tt></p>
+<div class="build container">
+<p>It's a good idea to develop the habit of checking the status of your
+repository regularly</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+    new file:   unix_notes.txt
+</pre></div>
+</div>
+<p>You can now see that the notes file has been added and is ready to be
+<em>committed</em></p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-commits-save-changes level-3">
+    <hgroup>
+      <h3>Commits Save Changes</h3>
+    </hgroup>
+    <article class="">
+      <p>Until you <em>commit</em> your chages nothing is permanent</p>
+<div class="build container">
+<p>As the previous slide showed, we could still <em>unstage</em> these changes,
+allowing our repository to forget this file exists</p>
+<p>But we don't want to do that</p>
+<div class="container">
+<p>So let's go ahead and use <tt class="docutils literal"><span class="pre">commit</span></tt> to save what we've done:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git commit -m <span class="s2">&quot;adding unix notes, first draft&quot;</span>
+<span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 0bc447c<span class="o">]</span> adding unix notes, first draft
+ <span class="m">1</span> file changed, <span class="m">0</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">0</span> deletions<span class="o">(</span>-<span class="o">)</span>
+ create mode <span class="m">100644</span> unix_notes.txt
+</pre></div>
+</div>
+</div>
+<div class="container">
+<p>And <tt class="docutils literal"><span class="pre">status</span></tt> shows the result:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+On branch master
+nothing to commit, working directory clean
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-what-makes-a-repository level-3">
+    <hgroup>
+      <h3>What Makes a Repository?</h3>
+    </hgroup>
+    <article class="">
+      <p>You have now created a repository and added a new file to it</p>
+<div class="build container">
+<p>You can even look at the history of your repository now (short though it
+may be)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git log
+commit 0bc447c0cfd0b7856cd19c705e8eefa0c64283de
+Author: cewing &lt;cris@crisewing.com&gt;
+Date:   Sat Nov <span class="m">15</span> 03:33:09 <span class="m">2014</span> -0800
+
+    adding unix notes, first draft
+</pre></div>
+</div>
+<p>But how does this all happen?</p>
+<p>Where is the stuff that makes this work?</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-peek-behind-the-curtain level-3">
+    <hgroup>
+      <h3>Peek Behind the Curtain</h3>
+    </hgroup>
+    <article class="">
+      <p>If you use the <tt class="docutils literal"><span class="pre">ls</span></tt> command inside your repository, all you'll see is
+your notes file</p>
+<div class="build container">
+<p>But there's more there than meets the eye</p>
+<div class="container">
+<p>Use the <cite>a</cite> flag to <tt class="docutils literal"><span class="pre">ls</span></tt> to see <em>all</em> items in the folder:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls -la
+total 0
+drwxr-xr-x   <span class="m">4</span> cewing  staff  <span class="m">136</span> Nov <span class="m">15</span> 03:15 .
+drwxr-xr-x   <span class="m">6</span> cewing  staff  <span class="m">204</span> Nov <span class="m">15</span> 03:15 ..
+drwxr-xr-x  <span class="m">13</span> cewing  staff  <span class="m">442</span> Nov <span class="m">15</span> 03:33 .git
+-rw-r--r--   <span class="m">1</span> cewing  staff    <span class="m">0</span> Nov <span class="m">15</span> 03:15 unix_notes.txt
+</pre></div>
+</div>
+</div>
+<p>That <tt class="docutils literal"><span class="pre">.git</span></tt> directory is the special secret sauce</p>
+<p>Everything that git knows about your repository is held in that folder</p>
+<p>If you delete it (don't), your repository becomes just another
+directory</p>
+</div>
+
+
+
+
+    </article>
+  </slide>
+
+
+    <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="https://dgosxlrnzhofi.cloudfront.net/assets/logo-3fc81b216ed94ef783583de4160a97ef.svg"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>&nbsp;</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
