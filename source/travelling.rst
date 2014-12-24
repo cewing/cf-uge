@@ -113,21 +113,21 @@ terminal.
         .. code-block:: bash
 
             $ pwd
-            /Users/cewing/projects
+            /Users/cewing
 
         Linux
 
         .. code-block:: bash
 
             $ pwd
-            /home/cewing/projects
+            /home/cewing
 
         Windows (git-bash)
 
         .. code-block:: bash
 
             $ pwd
-            /c/Users/Cris Ewing/projects
+            /c/Users/Cris Ewing
 
 .. slide:: CONCEPT: The Path
     :level: 2
