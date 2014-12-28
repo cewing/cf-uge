@@ -350,13 +350,17 @@ preserve a record of the actions we take.
 .. slide:: Install Git
     :level: 3
 
-    If you haven't already done so, please download and install git now
+    .. container::
 
-        http://git-scm.com/downloads
+        If you haven't already done so, please download and install git now
 
-    Windows users, please install git from here instead:
+            http://git-scm.com/downloads
 
-        http://msysgit.github.io/
+    .. container::
+
+        Windows users, please install git from here instead:
+
+            http://msysgit.github.io/
 
 .. slide:: Basic Configuration
     :level: 3
@@ -654,6 +658,7 @@ preserve a record of the actions we take.
 
         Where is the stuff that makes this work?
 
+
 .. slide:: Peek Behind the Curtain
     :level: 3
 
@@ -693,14 +698,14 @@ preserve a record of the actions we take.
 
         This ``.git`` directory is an example of a *hidden file*
 
-        In Unix, any file whose name begins with ``.`` is, by default, not shown to
-        the user unless specifically asked for
+        In Unix, any file whose name begins with ``.`` is, by default, not
+        shown to the user unless specifically asked for
 
         This helps to keep the clutter associated with maintenance and
         configuration out of sight
 
-        The ``.`` and ``..`` items in every directory on the filesystem are also
-        examples of this type of file
+        The ``.`` and ``..`` items in every directory on the filesystem are
+        also examples of this type of file
 
         You know what they do, right?
 
@@ -776,7 +781,7 @@ preserve a record of the actions we take.
     .. rst-class:: build
     .. container::
 
-        You create a repository **once**
+        You ``init`` a repository **once**
 
         Then you ``add`` a file or files to it and you ``commit`` those changes
 
@@ -1216,7 +1221,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         Remember how to switch branches?
 
         ``git checkout master``
@@ -1224,7 +1229,7 @@ preserve a record of the actions we take.
         Then, push your master branch to github:
 
         .. code-block:: bash
-        
+
             $ git push -u origin master
             Counting objects: 6, done.
             ...
@@ -1239,7 +1244,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         Once there, spend five to ten minutes jotting down your notes on git
         remotes
 
@@ -1250,7 +1255,7 @@ preserve a record of the actions we take.
         Finally, push your git-notes branch up to github too
 
         .. code-block:: bash
-        
+
             $ git push -u origin git-notes
             ...
             To git@github.com:cewing/uge-workshop.git
@@ -1264,7 +1269,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         Imagine your repository is not notes from a class, but code for a vital
         website
 
@@ -1310,7 +1315,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         Click it
 
         It will open a page listing open pull requests
@@ -1318,7 +1323,7 @@ preserve a record of the actions we take.
         There should be none
 
         .. container::
-        
+
             click the big, green button that says **New pull request**
 
             .. figure:: /_static/github_new_pr_button.png
@@ -1334,7 +1339,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         When you first arrive, you'll be offered a chance to set the to and
         from points for your new **PR**
 
@@ -1350,7 +1355,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         On the next screen, enter a note about why the PR should be merged
 
         Then click **Create pull request** again
@@ -1368,7 +1373,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         In reviewing a pull request, the owner of a project is given quite a
         few tools
 
@@ -1393,7 +1398,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         When work is completed to everyone's satisfaction, the **PR** can be
         merged
 
@@ -1423,7 +1428,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         To catch up, we have to pull the changes back
 
         Return to your terminal, and checkout the master branch of your
@@ -1433,7 +1438,7 @@ preserve a record of the actions we take.
         out
 
         .. container::
-        
+
             When ready, type the following:
 
             .. code-block:: bash
@@ -1450,10 +1455,10 @@ preserve a record of the actions we take.
     * Git ``fetched`` all of the changes on master to a local branch called
       origin/master
     * Git ``merged`` the changes from origin/master to your local master branch
-    
+
     .. rst-class:: build
     .. container::
-    
+
         You can accomplish the same thing on your own as two commands
 
         But doing just one is so much easier
@@ -1542,7 +1547,7 @@ preserve a record of the actions we take.
 
     .. rst-class:: build
     .. container::
-    
+
         But that's all I've written up here
 
         If there's some spare time, we'd be happy to continue going over more
