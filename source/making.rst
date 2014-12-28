@@ -377,8 +377,27 @@ preserve a record of the actions we take.
                 $ git config --global user.name "Cris Ewing"
                 $ git config --global user.email "cris@crisewing.com"
 
-        This will allow git to record that you made changes, and to provide
-        contact information for any who wish to consult with you
+        Using this information, each time you make a *commit* git will record
+        that *you* made the changes, and will provide contact information for
+        any who wish to consult with you.
+
+.. slide:: GIT COMMAND: ``config``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``config`` command sets configuration values either globally or for
+        a single repository.
+
+        You can use it to let git know who you are and control the way git
+        works for you.
+
+        You can read more about this powerful command in the
+        `Git Configuration`_ chapter of `the Pro Git book`_.
+
+.. _Git Configuration: http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+.. _the Pro Git book: http://git-scm.com/book/en/v2
 
 
 .. slide:: Your First Repository
@@ -399,6 +418,26 @@ preserve a record of the actions we take.
 
         $ git init
         Initialized empty Git repository in /home/cewing/uge_workshop/.git
+
+.. slide:: GIT COMMAND: ``init``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``init`` command creates a brand new repository in your current
+        working directory. (remember `pwd`?)
+
+        You only need to **run this command once** for any project you start.
+
+        You **do not** run this command for projects you *clone* from other
+        sources like GitHub.
+
+        Read more about how to start a repository in the chapter
+        `Getting a Git Repository`_ in `the Pro Git book`_.
+
+.. _Getting a Git Repository: http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
+
 
 .. slide:: What's Up, Git?
     :level: 3
@@ -428,6 +467,27 @@ preserve a record of the actions we take.
 
         Git even tells you what to do next
 
+.. slide:: GIT COMMAND: ``status``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``status`` command will provide information about the current state
+        of your repository.
+
+        You use it to see which files need to be added and which have been
+        changed and are awaiting commits.
+
+        You should make a habit of frequently checking the status of your
+        repository to develop a good awareness of how things are changing.
+
+        Read more about this command in `Recording Changes to the Repository`_
+        in `the Pro Git book`_.
+
+.. _Recording Changes to the Repsitory: http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status
+
+
 .. slide:: Adding your first file
     :level: 3
 
@@ -448,6 +508,21 @@ preserve a record of the actions we take.
                 $ git add unix_notes.txt
 
         There should be no output here, but your file has now been added
+
+.. slide:: GIT COMMAND: ``add``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``add`` command places a new file under the control of your
+        repository.
+
+        Once a file has been added, git is aware of the file and will track
+        changes to it.
+
+        Read more about ``add`` in `Recording Changes to the Repository`_
+        in `the Pro Git book`_.
 
 .. slide:: QUESTION
     :level: 2
@@ -513,6 +588,47 @@ preserve a record of the actions we take.
                 $ git status
                 On branch master
                 nothing to commit, working directory clean
+
+.. slide:: Being Informative
+    :level: 3
+
+    Keeping a history of your work is good.
+
+    .. rst-class:: build
+    .. container::
+
+        Providing descriptions of the changes you make is even better.
+
+        In your first commit above, you *modified* the git ``commit`` command
+        with a *flag*: ``-m``
+
+        This flag takes a single argument, a *message* about the commit you are
+        making.
+
+        If you don't provide this *flag*, git will open a text editor so that
+        you can provide this *message*.
+
+.. slide:: GIT COMMAND: ``commit``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``commit`` command is used to create a permanent record of changes
+        to your repository.
+
+        It saves all the changes that have been *staged*.
+
+        Each commit saves:
+
+        * The changes made to each file on the *stage*
+        * The identity of the person who made the changes
+        * The date and time the change was made
+        * A brief message about the nature of the changes made
+        * A universally unique identifier for the set of changes
+
+        Read more about this command in `Recording Changes to the Repository`_
+        in `the Pro Git book`_.
 
 .. slide:: What Makes a Repository?
     :level: 3
@@ -688,6 +804,24 @@ preserve a record of the actions we take.
         Date:   Sat Nov 15 03:33:09 2014 -0800
 
             adding unix notes, first draft
+
+.. slide:: GIT COMMAND: ``log``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``log`` command shows a view of the history of your repository
+
+        That history can be displayed in a wide variety of ways
+
+        Learning how to use the ``log`` command will help to make you a git
+        power user.
+
+        You can read more about this command in `Viewing the Command History`_
+        in `the Pro Git book`.
+
+        .. _Viewing the Command History: http://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
 
 .. slide:: Stepping Back
     :level: 1
