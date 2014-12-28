@@ -1403,7 +1403,7 @@ preserve a record of the actions we take.
 .. slide:: Pulling Changes
     :level: 3
 
-    Now that you've merged git-notes to master on GitHub, your local mster
+    Now that you've merged git-notes to master on GitHub, your local master
     branch is out-of-date
 
     .. rst-class:: build
