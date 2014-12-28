@@ -489,7 +489,7 @@ preserve a record of the actions we take.
         Read more about this command in `Recording Changes to the Repository`_
         in `the Pro Git book`_.
 
-.. _Recording Changes to the Repsitory: http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status
+.. _Recording Changes to the Repository: http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status
 
 
 .. slide:: Adding your first file
@@ -524,6 +524,9 @@ preserve a record of the actions we take.
 
         Once a file has been added, git is aware of the file and will track
         changes to it.
+
+        The command also adds files that have been modified from their known
+        state to the *stage*.
 
         Read more about ``add`` in `Recording Changes to the Repository`_
         in `the Pro Git book`_.
@@ -560,7 +563,6 @@ preserve a record of the actions we take.
         *committed*
 
 .. slide:: Git is Helpful
-
     :level: 3
 
     Pay attention to one specific part of the output of your ``status``
