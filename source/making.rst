@@ -1057,7 +1057,7 @@ preserve a record of the actions we take.
 
         ``git status``
 
-        ``git add``
+        ``git add git_notes.txt``
 
         ``git commit -m "starting notes on git"``
 
