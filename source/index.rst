@@ -9,7 +9,7 @@ Unix & Git for Everyone
 Getting comfortable with the command line and mastering basic git versioning
 workflow.
 
-.. slide:: Git & Unix for Everyone
+.. slide:: Unix & Git for Everyone
     :level: 3
 
     *Goals*:
