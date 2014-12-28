@@ -845,7 +845,7 @@ preserve a record of the actions we take.
         power user.
 
         You can read more about this command in `Viewing the Command History`_
-        in `the Pro Git book`.
+        in `the Pro Git book`_.
 
         .. _Viewing the Command History: http://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
 
