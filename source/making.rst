@@ -559,6 +559,25 @@ preserve a record of the actions we take.
         You can now see that the notes file has been added and is ready to be
         *committed*
 
+.. slide:: Git is Helpful
+
+    :level: 3
+
+    Pay attention to one specific part of the output of your ``status``
+    command:
+
+    .. code-block:: bash
+
+        Changes to be committed:
+          (use "git rm --cached <file>..." to unstage)
+
+    This is one example of how git tries to be helpful to users.
+
+    It is telling you that you can *undo* what you've just done.
+
+    Learning to read these helpful messages will help you level up in your git
+    skills.
+
 .. slide:: Commits Save Changes
     :level: 3
 
