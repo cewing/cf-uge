@@ -1162,49 +1162,6 @@ preserve a record of the actions we take.
 
     Set up your repository as shown here, then click **Create Repository**
 
-.. slide:: Preparing to Connect
-    :level: 3
-
-    .. figure:: /_static/github_personal_settings.png
-        :width: 50%
-        :class: centered
-
-    .. rst-class:: build
-    .. container::
-
-        Before you connect your remote, you'll want to be sure that you will be
-        able to push easily
-
-        Start by clicking on the small gear icon at the top right near your
-        name and avatar
-
-        This will open your account settings page
-
-        On the settings page, click on the **SSH Keys** item in the menu on the
-        left
-
-.. slide:: Configuring SSH
-    :level: 3
-
-    .. figure:: /_static/github_ssh_page.png
-        :width: 70%
-        :class: centered
-
-    .. rst-class:: build
-    .. container::
-
-        If you do not see any keys listed in the page that opens, follow the
-        instructions linked at the top as **generating SSH keys**
-
-        If you do have keys, verify that they work:
-
-        .. code-block:: bash
-
-            $ ssh git@github.com
-            PTY allocation request failed on channel 0
-            Hi cewing! You've successfully authenticated, but GitHub does not provide shell access.
-            Connection to github.com closed.
-
 .. slide:: Add Your Remote
     :level: 3
 
