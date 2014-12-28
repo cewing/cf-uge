@@ -1,9 +1,9 @@
 
-.. Git & Unix for Everyone slides file, created by
+.. Unix & Git for Everyone slides file, created by
    hieroglyph-quickstart on Fri Nov 14 11:41:40 2014.
 
 ***********************
-Git & Unix for Everyone
+Unix & Git for Everyone
 ***********************
 
 Getting comfortable with the command line and mastering basic git versioning
