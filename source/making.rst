@@ -1165,10 +1165,12 @@ preserve a record of the actions we take.
 .. slide:: Add Your Remote
     :level: 3
 
-    In your browser, return to your newly created repository
+    In your browser, you should be viewing your newly created repository
 
     .. rst-class:: build
     .. container::
+
+        You should see instructions about what to do next.
 
         In your terminal, use your unix knowledge to ensure you are in your local
         ``uge_workshop`` directory
@@ -1179,7 +1181,7 @@ preserve a record of the actions we take.
 
             .. code-block:: bash
 
-                $ git remote add origin git@github.com:cewing/uge-workshop.git
+                $ git remote add origin https://github.com/cewing/uge-workshop.git
 
         .. container::
 
@@ -1188,8 +1190,8 @@ preserve a record of the actions we take.
             .. code-block:: bash
 
                 $ git remote -v
-                origin  git@github.com:cewing/uge-workshop.git (fetch)
-                origin  git@github.com:cewing/uge-workshop.git (push)
+                origin  https://github.com/cewing/uge-workshop.git (fetch)
+                origin  https://github.com/cewing/uge-workshop.git (push)
 
 .. slide:: Push to Your Remote
     :level: 3
