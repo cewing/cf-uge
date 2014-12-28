@@ -260,7 +260,7 @@ preserve a record of the actions we take.
 
             .. code-block:: bash
 
-                $ mkdir gue_workshop
+                $ mkdir uge_workshop
 
         Use ``ls`` to confirm that the new directory exists
 
@@ -285,7 +285,7 @@ preserve a record of the actions we take.
 
         .. code-block:: bash
 
-            $ mv moving_around.txt ./gue_workshop/
+            $ mv moving_around.txt ./uge_workshop/
 
 .. slide:: Better Names
     :level: 3
@@ -300,7 +300,7 @@ preserve a record of the actions we take.
 
         .. code-block:: bash
 
-            $ mv ./gue_workshop/moving_around.txt ./gue_workshop/unix_notes.txt
+            $ mv ./uge_workshop/moving_around.txt ./uge_workshop/unix_notes.txt
 
     That's better
 
@@ -390,7 +390,7 @@ preserve a record of the actions we take.
     Begin by changing directories into the one that holds the files you want to
     save
 
-    In your case, that's the new ``gue_workshop`` directory you just created a
+    In your case, that's the new ``uge_workshop`` directory you just created a
     moment ago
 
     Once there, use the ``init`` git command to create a new repository
@@ -398,7 +398,7 @@ preserve a record of the actions we take.
     .. code-block:: bash
 
         $ git init
-        Initialized empty Git repository in /home/cewing/gue_workshop/.git
+        Initialized empty Git repository in /home/cewing/uge_workshop/.git
 
 .. slide:: What's Up, Git?
     :level: 3
@@ -1054,7 +1054,7 @@ preserve a record of the actions we take.
     .. container::
 
         In your terminal, use your unix knowledge to ensure you are in your local
-        ``gue_workshop`` directory
+        ``uge_workshop`` directory
 
         .. container::
 
@@ -1062,7 +1062,7 @@ preserve a record of the actions we take.
 
             .. code-block:: bash
 
-                $ git remote add origin git@github.com:cewing/gue-workshop.git
+                $ git remote add origin git@github.com:cewing/uge-workshop.git
 
         .. container::
 
@@ -1071,8 +1071,8 @@ preserve a record of the actions we take.
             .. code-block:: bash
 
                 $ git remote -v
-                origin  git@github.com:cewing/gue-workshop.git (fetch)
-                origin  git@github.com:cewing/gue-workshop.git (push)
+                origin  git@github.com:cewing/uge-workshop.git (fetch)
+                origin  git@github.com:cewing/uge-workshop.git (push)
 
 .. slide:: Push to Your Remote
     :level: 3
@@ -1094,7 +1094,7 @@ preserve a record of the actions we take.
             $ git push -u origin master
             Counting objects: 6, done.
             ...
-            To git@github.com:cewing/gue-workshop.git
+            To git@github.com:cewing/uge-workshop.git
              * [new branch]      master -> master
             Branch master set up to track remote branch master from origin.
 
@@ -1119,7 +1119,7 @@ preserve a record of the actions we take.
         
             $ git push -u origin git-notes
             ...
-            To git@github.com:cewing/gue-workshop.git
+            To git@github.com:cewing/uge-workshop.git
              * [new branch]      git-notes -> git-notes
             Branch git-notes set up to track remote branch git-notes from origin.
 
@@ -1166,7 +1166,7 @@ preserve a record of the actions we take.
 
         All this is done, again, in the web browser
 
-        Go back to GitHub, to your new ``gue-workshop`` repository
+        Go back to GitHub, to your new ``uge-workshop`` repository
 
 .. slide:: Creating a PR
     :level: 3
