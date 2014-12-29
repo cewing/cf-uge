@@ -1222,6 +1222,26 @@ preserve a record of the actions we take.
                 origin  https://github.com/cewing/uge-workshop.git (fetch)
                 origin  https://github.com/cewing/uge-workshop.git (push)
 
+.. slide:: GIT COMMAND: ``remote``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``remote`` command controls interactions with and configuration of
+        remote repositories.
+
+        You can use it to connect new *remotes*, edit the status of existing
+        connections, or remove them entirely.
+
+        By allowing connections between *local* and *remote* repositories, git
+        facilitates *collaboration* between developers.
+
+        You can read more about *remotes* in the chapter `Working with Remotes`_
+        in `the Pro Git book`_.
+
+        .. _Working with Remotes: http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+
 .. slide:: Push to Your Remote
     :level: 3
 
@@ -1245,6 +1265,24 @@ preserve a record of the actions we take.
             To git@github.com:cewing/uge-workshop.git
              * [new branch]      master -> master
             Branch master set up to track remote branch master from origin.
+
+.. slide:: GIT COMMAND: ``push``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``push`` command sends changes from a local repository to a
+        *remote*.
+
+        You can control which remote to send to, and which branch to send by
+        naming them explicitly on the command line.
+
+        You can also use ``config`` to set the default so that git behaves as
+        you wish it to.
+
+        You can read more about this command starting in the chapter
+        `Working with Remotes`_ from `the Pro Git book`_.
 
 .. slide:: Solidify Your Learning
     :level: 3
@@ -1471,6 +1509,23 @@ preserve a record of the actions we take.
         You can accomplish the same thing on your own as two commands
 
         But doing just one is so much easier
+
+.. slide:: GIT COMMAND: ``pull``
+    :level: 2
+
+    .. rst-class:: left
+    .. container::
+
+        The ``pull`` command rolls two commands into one step.
+
+        * It *fetches* changes to a named branch from the named remote.
+        * Then it *merges* those changes into the current local branch.
+
+        You can perform these steps individually in order to gain more control
+        or better predictability for integrating changes from remotes.
+
+        Learn more about this command and the related ``fetch`` and ``merge``
+        commands in `Working with Remotes`_ from `the Pro Git book`_.
 
 .. slide:: Review
     :level: 1
