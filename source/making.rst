@@ -868,6 +868,35 @@ preserve a record of the actions we take.
 
         That last one is a bit tricky, so let's talk it over for a minute
 
+.. slide:: Our History, So Far
+    :level: 3
+
+    We began by creating a brand new, empty repository with ``git init``:
+
+    .. figure:: /_static/git_repo_initialized.png
+        :width: 15%
+        :class: centered build
+
+.. slide:: Our History, So Far
+    :level: 3
+
+    We added a new file to the repository and committed that change with ``git
+    commit``:
+
+    .. figure:: /_static/git_first_commit.png
+        :width: 70%
+        :class: centered build
+
+.. slide:: Our History, So Far
+    :level: 3
+
+    Then, we updated that file, added the modifications to the stage, and
+    committed again:
+
+    .. figure:: /_static/git_second_commit.png
+        :width: 75%
+        :class: centered build
+
 .. slide:: A Picture of git
     :level: 3
 
