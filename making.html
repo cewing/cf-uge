@@ -10,7 +10,7 @@ URL: https://code.google.com/p/io-2012-slides
 
 <html>
 <head>
-  <title>Git &amp; Unix for Everyone &mdash; Git &amp; Unix for Everyone</title>
+  <title>Unix &amp; Git for Everyone &mdash; Unix &amp; Git for Everyone</title>
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -51,7 +51,7 @@ URL: https://code.google.com/p/io-2012-slides
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     
-    <link rel="top" title="Git &amp; Unix for Everyone" href="index.html" /> 
+    <link rel="top" title="Unix &amp; Git for Everyone" href="index.html" /> 
 </head>
 <body style="opacity: 0">
 
@@ -324,7 +324,7 @@ make today) safe</p>
 <div class="container">
 <p>Use the <tt class="docutils literal"><span class="pre">mkdir</span></tt> command to create a new directory here in your <em>home
 directory</em> to hold these notes:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir gue_workshop
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir uge_workshop
 </pre></div>
 </div>
 </div>
@@ -348,7 +348,7 @@ directory</em> to hold these notes:</p>
 <em>two</em> paths</p>
 <p>The first is the address of the thing you want to move</p>
 <p>The second is the address of where you want to put it</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv moving_around.txt ./gue_workshop/
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv moving_around.txt ./uge_workshop/
 </pre></div>
 </div>
 </div>
@@ -366,7 +366,7 @@ directory</em> to hold these notes:</p>
 <p>We should rename it to something better, like &quot;unix_notes.txt&quot;</p>
 <div class="container">
 <p>You can use the <tt class="docutils literal"><span class="pre">mv</span></tt> command to do this, too:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv ./gue_workshop/moving_around.txt ./gue_workshop/unix_notes.txt
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mv ./uge_workshop/moving_around.txt ./uge_workshop/unix_notes.txt
 </pre></div>
 </div>
 </div>
@@ -423,12 +423,16 @@ safe</p>
       <h3>Install Git</h3>
     </hgroup>
     <article class="">
-      <p>If you haven't already done so, please download and install git now</p>
+      <div class="container">
+<p>If you haven't already done so, please download and install git now</p>
 <q>
 <a class="reference external" href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></q>
+</div>
+<div class="container">
 <p>Windows users, please install git from here instead:</p>
 <q>
 <a class="reference external" href="http://msysgit.github.io/">http://msysgit.github.io/</a></q>
+</div>
 
 
 
@@ -449,8 +453,27 @@ safe</p>
 </pre></div>
 </div>
 </div>
-<p>This will allow git to record that you made changes, and to provide
-contact information for any who wish to consult with you</p>
+<p>Using this information, each time you make a <em>commit</em> git will record
+that <em>you</em> made the changes, and will provide contact information for
+any who wish to consult with you.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-config level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">config</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">config</span></tt> command sets configuration values either globally or for
+a single repository.</p>
+<p>You can use it to let git know who you are and control the way git
+works for you.</p>
+<p>You can read more about this powerful command in the
+<a class="reference external" href="http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">Git Configuration</a> chapter of <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -466,12 +489,31 @@ contact information for any who wish to consult with you</p>
 snap</p>
 <p>Begin by changing directories into the one that holds the files you want to
 save</p>
-<p>In your case, that's the new <tt class="docutils literal"><span class="pre">gue_workshop</span></tt> directory you just created a
+<p>In your case, that's the new <tt class="docutils literal"><span class="pre">uge_workshop</span></tt> directory you just created a
 moment ago</p>
 <p>Once there, use the <tt class="docutils literal"><span class="pre">init</span></tt> git command to create a new repository</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git init
-Initialized empty Git repository in /home/cewing/gue_workshop/.git
+Initialized empty Git repository in /home/cewing/uge_workshop/.git
 </pre></div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-init level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">init</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">init</span></tt> command creates a brand new repository in your current
+working directory. (remember <cite>pwd</cite>?)</p>
+<p>You only need to <strong>run this command once</strong> for any project you start.</p>
+<p>You <strong>do not</strong> run this command for projects you <em>clone</em> from other
+sources like GitHub.</p>
+<p>Read more about how to start a repository in the chapter
+<a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">Getting a Git Repository</a> in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -507,6 +549,26 @@ nothing added to commit but untracked files present <span class="o">(</span>use 
 
 
     </article>
+  </slide>  <slide class="admonition-git-command-status level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">status</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">status</span></tt> command will provide information about the current state
+of your repository.</p>
+<p>You use it to see which files need to be added and which have been
+changed and are awaiting commits.</p>
+<p>You should make a habit of frequently checking the status of your
+repository to develop a good awareness of how things are changing.</p>
+<p>Read more about this command in <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status">Recording Changes to the Repository</a>
+in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
+</div>
+
+
+
+
+    </article>
   </slide>  <slide class="admonition-adding-your-first-file level-3">
     <hgroup>
       <h3>Adding your first file</h3>
@@ -523,6 +585,26 @@ repository</p>
 </div>
 </div>
 <p>There should be no output here, but your file has now been added</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-add level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">add</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">add</span></tt> command places a new file under the control of your
+repository.</p>
+<p>Once a file has been added, git is aware of the file and will track
+changes to it.</p>
+<p>The command also adds files that have been modified from their known
+state to the <em>stage</em>.</p>
+<p>Read more about <tt class="docutils literal"><span class="pre">add</span></tt> in <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status">Recording Changes to the Repository</a>
+in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -568,6 +650,26 @@ Changes to be committed:
 
 
     </article>
+  </slide>  <slide class="admonition-git-is-helpful level-3">
+    <hgroup>
+      <h3>Git is Helpful</h3>
+    </hgroup>
+    <article class="">
+      <p>Pay attention to one specific part of the output of your <tt class="docutils literal"><span class="pre">status</span></tt>
+command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+</pre></div>
+</div>
+<p>This is one example of how git tries to be helpful to users.</p>
+<p>It is telling you that you can <em>undo</em> what you've just done.</p>
+<p>Learning to read these helpful messages will help you level up in your git
+skills.</p>
+
+
+
+
+    </article>
   </slide>  <slide class="admonition-commits-save-changes level-3">
     <hgroup>
       <h3>Commits Save Changes</h3>
@@ -595,6 +697,51 @@ nothing to commit, working directory clean
 </pre></div>
 </div>
 </div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-being-informative level-3">
+    <hgroup>
+      <h3>Being Informative</h3>
+    </hgroup>
+    <article class="">
+      <p>Keeping a history of your work is good.</p>
+<div class="build container">
+<p>Providing descriptions of the changes you make is even better.</p>
+<p>In your first commit above, you <em>modified</em> the git <tt class="docutils literal"><span class="pre">commit</span></tt> command
+with a <em>flag</em>: <tt class="docutils literal"><span class="pre">-m</span></tt></p>
+<p>This flag takes a single argument, a <em>message</em> about the commit you are
+making.</p>
+<p>If you don't provide this <em>flag</em>, git will open a text editor so that
+you can provide this <em>message</em>.</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-commit level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">commit</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">commit</span></tt> command is used to create a permanent record of changes
+to your repository.</p>
+<p>It saves all the changes that have been <em>staged</em>.</p>
+<p>Each commit saves:</p>
+<ul class="simple">
+<li>The changes made to each file on the <em>stage</em></li>
+<li>The identity of the person who made the changes</li>
+<li>The date and time the change was made</li>
+<li>A brief message about the nature of the changes made</li>
+<li>A universally unique identifier for the set of changes</li>
+</ul>
+<p>Read more about this command in <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_checking_status">Recording Changes to the Repository</a>
+in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -663,12 +810,12 @@ directory</p>
     <article class="">
       <div class="left container">
 <p>This <tt class="docutils literal"><span class="pre">.git</span></tt> directory is an example of a <em>hidden file</em></p>
-<p>In Unix, any file whose name begins with <tt class="docutils literal"><span class="pre">.</span></tt> is, by default, not shown to
-the user unless specifically asked for</p>
+<p>In Unix, any file whose name begins with <tt class="docutils literal"><span class="pre">.</span></tt> is, by default, not
+shown to the user unless specifically asked for</p>
 <p>This helps to keep the clutter associated with maintenance and
 configuration out of sight</p>
-<p>The <tt class="docutils literal"><span class="pre">.</span></tt> and <tt class="docutils literal"><span class="pre">..</span></tt> items in every directory on the filesystem are also
-examples of this type of file</p>
+<p>The <tt class="docutils literal"><span class="pre">.</span></tt> and <tt class="docutils literal"><span class="pre">..</span></tt> items in every directory on the filesystem are
+also examples of this type of file</p>
 <p>You know what they do, right?</p>
 <p>Add a note to your <tt class="docutils literal"><span class="pre">unix_notes.txt</span></tt> about <em>hidden files</em></p>
 </div>
@@ -747,7 +894,7 @@ Changes to be committed:
     <article class="">
       <p>And that's the basics of git workflow</p>
 <div class="build container">
-<p>You create a repository <strong>once</strong></p>
+<p>You <tt class="docutils literal"><span class="pre">init</span></tt> a repository <strong>once</strong></p>
 <p>Then you <tt class="docutils literal"><span class="pre">add</span></tt> a file or files to it and you <tt class="docutils literal"><span class="pre">commit</span></tt> those changes</p>
 <p>Then you modify the files, <tt class="docutils literal"><span class="pre">add</span></tt> them to the stage and <tt class="docutils literal"><span class="pre">commit</span></tt> the
 changes</p>
@@ -783,6 +930,24 @@ Date:   Sat Nov <span class="m">15</span> 03:33:09 <span class="m">2014</span> -
 
 
     </article>
+  </slide>  <slide class="admonition-git-command-log level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">log</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">log</span></tt> command shows a view of the history of your repository</p>
+<p>That history can be displayed in a wide variety of ways</p>
+<p>Learning how to use the <tt class="docutils literal"><span class="pre">log</span></tt> command will help to make you a git
+power user.</p>
+<p>You can read more about this command in <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History">Viewing the Command History</a>
+in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
+</div>
+
+
+
+
+    </article>
   </slide>  <slide class="admonition-stepping-back level-1">
     <hgroup>
       <h1>Stepping Back</h1>
@@ -804,6 +969,50 @@ Date:   Sat Nov <span class="m">15</span> 03:33:09 <span class="m">2014</span> -
 <p>A history of everything you do to your files</p>
 <p>A graph of &quot;states&quot; in which your files has existed</p>
 <p>That last one is a bit tricky, so let's talk it over for a minute</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-our-history-so-far level-3">
+    <hgroup>
+      <h3>Our History, So Far</h3>
+    </hgroup>
+    <article class="">
+      <p>We began by creating a brand new, empty repository with <tt class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></tt>:</p>
+<div class="figure">
+<a class="centered build reference internal image-reference" href="_images/git_repo_initialized.png"><img alt="_images/git_repo_initialized.png" class="centered build" src="_images/git_repo_initialized.png" style="width: 15%;" /></a>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-our-history-so-far level-3">
+    <hgroup>
+      <h3>Our History, So Far</h3>
+    </hgroup>
+    <article class="">
+      <p>We added a new file to the repository and committed that change with <tt class="docutils literal"><span class="pre">git</span>
+<span class="pre">commit</span></tt>:</p>
+<div class="figure">
+<a class="centered build reference internal image-reference" href="_images/git_first_commit.png"><img alt="_images/git_first_commit.png" class="centered build" src="_images/git_first_commit.png" style="width: 70%;" /></a>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-our-history-so-far level-3">
+    <hgroup>
+      <h3>Our History, So Far</h3>
+    </hgroup>
+    <article class="">
+      <p>Then, we updated that file, added the modifications to the stage, and
+committed again:</p>
+<div class="figure">
+<a class="centered build reference internal image-reference" href="_images/git_second_commit.png"><img alt="_images/git_second_commit.png" class="centered build" src="_images/git_second_commit.png" style="width: 75%;" /></a>
 </div>
 
 
@@ -1010,7 +1219,7 @@ workflow to save them</p>
 <div class="build container">
 <p>Do you remember the workflow?</p>
 <p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt></p>
-<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">git_notes.txt</span></tt></p>
 <p><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;starting</span> <span class="pre">notes</span> <span class="pre">on</span> <span class="pre">git&quot;</span></tt></p>
 <p>Again, try to <em>visualize</em> what's happening here</p>
 </div>
@@ -1132,75 +1341,50 @@ to your local repository as a <em>remote</em></p>
 
 
     </article>
-  </slide>  <slide class="admonition-preparing-to-connect level-3">
-    <hgroup>
-      <h3>Preparing to Connect</h3>
-    </hgroup>
-    <article class="">
-      <div class="figure">
-<a class="centered reference internal image-reference" href="_images/github_personal_settings.png"><img alt="_images/github_personal_settings.png" class="centered" src="_images/github_personal_settings.png" style="width: 50%;" /></a>
-</div>
-<div class="build container">
-<p>Before you connect your remote, you'll want to be sure that you will be
-able to push easily</p>
-<p>Start by clicking on the small gear icon at the top right near your
-name and avatar</p>
-<p>This will open your account settings page</p>
-<p>On the settings page, click on the <strong>SSH Keys</strong> item in the menu on the
-left</p>
-</div>
-
-
-
-
-    </article>
-  </slide>  <slide class="admonition-configuring-ssh level-3">
-    <hgroup>
-      <h3>Configuring SSH</h3>
-    </hgroup>
-    <article class="">
-      <div class="figure">
-<a class="centered reference internal image-reference" href="_images/github_ssh_page.png"><img alt="_images/github_ssh_page.png" class="centered" src="_images/github_ssh_page.png" style="width: 70%;" /></a>
-</div>
-<div class="build container">
-<p>If you do not see any keys listed in the page that opens, follow the
-instructions linked at the top as <strong>generating SSH keys</strong></p>
-<p>If you do have keys, verify that they work:</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ ssh git@github.com
-PTY allocation request failed on channel 0
-Hi cewing! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-Connection to github.com closed.
-</pre></div>
-</div>
-</div>
-
-
-
-
-    </article>
   </slide>  <slide class="admonition-add-your-remote level-3">
     <hgroup>
       <h3>Add Your Remote</h3>
     </hgroup>
     <article class="">
-      <p>In your browser, return to your newly created repository</p>
+      <p>In your browser, you should be viewing your newly created repository</p>
 <div class="build container">
+<p>You should see instructions about what to do next.</p>
 <p>In your terminal, use your unix knowledge to ensure you are in your local
-<tt class="docutils literal"><span class="pre">gue_workshop</span></tt> directory</p>
+<tt class="docutils literal"><span class="pre">uge_workshop</span></tt> directory</p>
 <div class="container">
 <p>Then, add a remote to your local repository using the <tt class="docutils literal"><span class="pre">remote</span></tt> git command</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote add origin git@github.com:cewing/gue-workshop.git
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote add origin https://github.com/cewing/uge-workshop.git
 </pre></div>
 </div>
 </div>
 <div class="container">
 <p>Verify that this worked using the <tt class="docutils literal"><span class="pre">remote</span></tt> command with the <tt class="docutils literal"><span class="pre">v</span></tt> flag:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git remote -v
-origin  git@github.com:cewing/gue-workshop.git <span class="o">(</span>fetch<span class="o">)</span>
-origin  git@github.com:cewing/gue-workshop.git <span class="o">(</span>push<span class="o">)</span>
+origin  https://github.com/cewing/uge-workshop.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/cewing/uge-workshop.git <span class="o">(</span>push<span class="o">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-remote level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">remote</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">remote</span></tt> command controls interactions with and configuration of
+remote repositories.</p>
+<p>You can use it to connect new <em>remotes</em>, edit the status of existing
+connections, or remove them entirely.</p>
+<p>By allowing connections between <em>local</em> and <em>remote</em> repositories, git
+facilitates <em>collaboration</em> between developers.</p>
+<p>You can read more about <em>remotes</em> in the chapter <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">Working with Remotes</a>
+in <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -1221,11 +1405,31 @@ checked out</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push -u origin master
 Counting objects: 6, <span class="k">done</span>.
 ...
-To git@github.com:cewing/gue-workshop.git
+To git@github.com:cewing/uge-workshop.git
  * <span class="o">[</span>new branch<span class="o">]</span>      master -&gt; master
 Branch master <span class="nb">set </span>up to track remote branch master from origin.
 </pre></div>
 </div>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-push level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">push</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">push</span></tt> command sends changes from a local repository to a
+<em>remote</em>.</p>
+<p>You can control which remote to send to, and which branch to send by
+naming them explicitly on the command line.</p>
+<p>You can also use <tt class="docutils literal"><span class="pre">config</span></tt> to set the default so that git behaves as
+you wish it to.</p>
+<p>You can read more about this command starting in the chapter
+<a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">Working with Remotes</a> from <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 
@@ -1246,7 +1450,7 @@ remotes</p>
 <p>Finally, push your git-notes branch up to github too</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push -u origin git-notes
 ...
-To git@github.com:cewing/gue-workshop.git
+To git@github.com:cewing/uge-workshop.git
  * <span class="o">[</span>new branch<span class="o">]</span>      git-notes -&gt; git-notes
 Branch git-notes <span class="nb">set </span>up to track remote branch git-notes from origin.
 </pre></div>
@@ -1294,7 +1498,7 @@ ready to be reviewed</p>
 <p>Developers can make changes in response to comments and get them
 reviewed as well</p>
 <p>All this is done, again, in the web browser</p>
-<p>Go back to GitHub, to your new <tt class="docutils literal"><span class="pre">gue-workshop</span></tt> repository</p>
+<p>Go back to GitHub, to your new <tt class="docutils literal"><span class="pre">uge-workshop</span></tt> repository</p>
 </div>
 
 
@@ -1427,7 +1631,7 @@ pull request</p>
       <h3>Pulling Changes</h3>
     </hgroup>
     <article class="">
-      <p>Now that you've merged git-notes to master on GitHub, your local mster
+      <p>Now that you've merged git-notes to master on GitHub, your local master
 branch is out-of-date</p>
 <div class="build container">
 <p>To catch up, we have to pull the changes back</p>
@@ -1461,6 +1665,27 @@ origin/master</li>
 <div class="build container">
 <p>You can accomplish the same thing on your own as two commands</p>
 <p>But doing just one is so much easier</p>
+</div>
+
+
+
+
+    </article>
+  </slide>  <slide class="admonition-git-command-pull level-2">
+    <hgroup>
+      <h2>GIT COMMAND: <tt class="docutils literal"><span class="pre">pull</span></tt></h2>
+    </hgroup>
+    <article class="">
+      <div class="left container">
+<p>The <tt class="docutils literal"><span class="pre">pull</span></tt> command rolls two commands into one step.</p>
+<ul class="simple">
+<li>It <em>fetches</em> changes to a named branch from the named remote.</li>
+<li>Then it <em>merges</em> those changes into the current local branch.</li>
+</ul>
+<p>You can perform these steps individually in order to gain more control
+or better predictability for integrating changes from remotes.</p>
+<p>Learn more about this command and the related <tt class="docutils literal"><span class="pre">fetch</span></tt> and <tt class="docutils literal"><span class="pre">merge</span></tt>
+commands in <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">Working with Remotes</a> from <a class="reference external" href="http://git-scm.com/book/en/v2">the Pro Git book</a>.</p>
 </div>
 
 

@@ -1,15 +1,15 @@
 
-.. Git & Unix for Everyone slides file, created by
+.. Unix & Git for Everyone slides file, created by
    hieroglyph-quickstart on Fri Nov 14 11:41:40 2014.
 
 ***********************
-Git & Unix for Everyone
+Unix & Git for Everyone
 ***********************
 
 Getting comfortable with the command line and mastering basic git versioning
 workflow.
 
-.. slide:: Git & Unix for Everyone
+.. slide:: Unix & Git for Everyone
     :level: 3
 
     *Goals*:
@@ -50,14 +50,12 @@ workflow.
     .. rst-class:: build
 
     * move around and manipulate files with confidence
-    * learn about commands
-    * run programs
+    * learn about common unix commands
+    * run programs from your command line
     * control access to your filesystem
     * create a git repository from scratch
-    * fork someone else's repository
-    * clone a repository to your laptop
     * add, edit and remove items from a repository
-    * interact with the owners of other repositories using github
+    * connect a repository to the larger world with GitHub
 
 Unix
 ====

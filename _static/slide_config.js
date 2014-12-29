@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Git &amp; Unix for Everyone',
+    title: 'Unix &amp; Git for Everyone',
     subtitle: 'Code Fellows - Seattle',
     //eventInfo: {
     //  title: 'Google I/O',
