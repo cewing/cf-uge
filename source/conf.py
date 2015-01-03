@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Git & Unix for Everyone'
+project = u'Unix & Git for Everyone'
 copyright = u'2014, Ryan Sobol and Cris Ewing'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'GitAndUnixforEveryonedoc'
+htmlhelp_basename = 'UnixAndGitforEveryonedoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -203,7 +203,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'GitAndUnixforEveryone.tex', u'Git & Unix for Everyone Documentation',
+  ('index', 'UnixAndGitforEveryone.tex', u'Unix & Git for Everyone Documentation',
    u'Ryan Sobol and Cris Ewing', 'manual'),
 ]
 
@@ -233,7 +233,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'unixandgitforeveryone', u'Git & Unix for Everyone Documentation',
+    ('index', 'unixandgitforeveryone', u'Unix & Git for Everyone Documentation',
      [u'Ryan Sobol and Cris Ewing'], 1)
 ]
 
@@ -247,8 +247,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'GitAndUnixforEveryone', u'Git & Unix for Everyone Documentation',
-   u'Ryan Sobol and Cris Ewing', 'GitAndUnixforEveryone', 'One line description of project.',
+  ('index', 'UnixAndGitforEveryone', u'Unix & Git for Everyone Documentation',
+   u'Ryan Sobol and Cris Ewing', 'UnixAndGitforEveryone', 'Training documentation for the Code Fellows Unix & Git for Everyone workshop.',
    'Miscellaneous'),
 ]
 
@@ -271,7 +271,7 @@ extensions += [
     'hieroglyph',
 ]
 
-slide_title = 'Git & Unix for Everyone'
+slide_title = 'Unix & Git for Everyone'
 slide_theme = 'slides2'
 slide_levels = 3
 autoslides = False
@@ -306,7 +306,7 @@ slide_theme_options = {
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Git & Unix for Everyone'
+epub_title = u'Unix & Git for Everyone'
 epub_author = u'Ryan Sobol and Cris Ewing'
 epub_publisher = u'Ryan Sobol and Cris Ewing'
 epub_copyright = u'2014, Ryan Sobol and Cris Ewing'
