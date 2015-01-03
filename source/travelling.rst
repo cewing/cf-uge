@@ -106,7 +106,7 @@ terminal.
     .. rst-class:: left
     .. container::
 
-        The ``pwd`` command shows the *present working directory*
+        The ``pwd`` command stands for *print working directory*
 
         OSX
 
@@ -285,7 +285,7 @@ terminal.
 
     .. container::
 
-        To list the contents of your *present working directory*, you'll use
+        To list the contents of your *current working directory*, you'll use
         the ``ls`` command.
 
         Type this command at your prompt:
@@ -329,7 +329,7 @@ terminal.
 
     .. container::
 
-        By default, it shows the names of items in your *present working directory*
+        By default, it shows the names of items in your *current working directory*
         in alphabetical order
 
         By providing the command with *flags*, we can modify that
@@ -410,7 +410,7 @@ terminal.
     .. container::
 
         The ``ls`` command shows you a *listing* of the contents of your
-        *present working directory*
+        *curent working directory*
 
         The behavior of this command can be altered by *flags*
 
@@ -662,7 +662,7 @@ terminal.
         Use the ``cd`` command, providing the name of your chosen directory as a
         *relative path*
 
-        Now, make a prediction about the *path* of your *present working directory*
+        Now, make a prediction about the *path* of your *current working directory*
 
         Finally, use the ``pwd`` command to confirm or reject your prediction
 
@@ -853,7 +853,7 @@ terminal.
     ======= =============================================================
     command purpose
     ======= =============================================================
-    ``pwd`` obtain the *absolute path* of the *present working directory*
+    ``pwd`` print the *absolute path* of the *current working directory*
     ------- -------------------------------------------------------------
     ``cd``  change directories to the path provided (or home if none)
     ------- -------------------------------------------------------------
